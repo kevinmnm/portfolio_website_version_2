@@ -9,23 +9,37 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-/*
-    ****SET UP GITHUB PROFILE!****
-    
+/* 
     -Things to fix-
     - Animate skill section per skill to show up(?)
-    - Animate all project by adding more img.
+    - On eyes and github hover, toggle title.
+    - Add videos for chunck view projects instead of images.
     - Add some text introduction in about me section.
     - Reduce margin between sections.
     - Side menu flash once onload.
     - Profile pic not showing at the same time as skills section.
-    - Change 'show' animation and when element's top or mid is in viewport instead of bottom.
     - Add all the functionalities.
     - Consider adding 'learn' project (codepend.io embed).
     - Menu bar pop-up debouncing..?
     - Learn how to embed code.io and such.
     - Puzzle game project.
 */
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background-color: rgb(40, 44, 52);
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(33, 35, 41)
+}
+
 body{
     position: absolute;
     margin: 0;
@@ -51,13 +65,13 @@ body{
     box-sizing: border-box;
     color: rgb(100,255,218);
     font-family: 'Nunito', sans-serif;
-    font-size: calc(0.8vh + 0.8vw);
+    font-size: calc(0.7vh + 0.7vw);
     z-index: 5;
     /*border-bottom: 0.1px solid #1e2126;*/
     background-color: rgba(33, 35, 41, 0.6);
     padding: 5px;
     /*border-radius: 5px;*/
-    box-shadow: 0 0 2px black;
+    /*box-shadow: 0 0 2px black;*/
     user-select: none;
 }
 #navBar:hover{background-color: rgba(33, 35, 41);}
@@ -226,7 +240,7 @@ body{
 
 .about{
     color: white;
-    font-size: calc(2.5vw + 2.5vh);
+    font-size: calc(2vw + 2vh);
     font-family: Verdana,sans-serif;
     font-weight: normal;
     margin-left: 75px;
@@ -716,6 +730,7 @@ li::before{
     <div class='social-media'>
         <a href='https://www.facebook.com/kevin.song.790/' target='_blank' class='fa fas fa-facebook animate__animated'></a>
         <a href='https://www.linkedin.com/in/kevin-song-b67138169/' target='_blank' class='fa fas fa-linkedin animate__animated'></a>
+        <a href='https://codepen.io/kevinmnm' target='_blank' class='fa fas fa-codepen animate__animated'></a>
         <a href='https://www.instagram.com/kevinmnm/?hl=en' target='_blank' class='fa fas fa-instagram animate__animated'></a>
         <a href='https://github.com/kevinmnm' target='_blank' class='fa fas fa-github animate__animated'></a>
     </div>
@@ -880,6 +895,7 @@ li::before{
 <div class='social-media-bottom'>
     <a href='https://www.facebook.com/kevin.song.790/' target='_blank' class='fa fas fa-facebook animate__animated'></a>
     <a href='https://www.linkedin.com/in/kevin-song-b67138169/' target='_blank' class='fa fas fa-linkedin animate__animated'></a>
+    <a href='https://codepen.io/kevinmnm' target='_blank' class='fa fas fa-codepen animate__animated'></a>
     <a href='https://www.instagram.com/kevinmnm/?hl=en' target='_blank' class='fa fas fa-instagram animate__animated'></a>
     <a href='https://github.com/kevinmnm' target='_blank' class='fa fas fa-github animate__animated'></a>
 </div>
@@ -1177,7 +1193,17 @@ let email = document.querySelectorAll('.email');
 //Buttons onclick event listeners
 logo.addEventListener('click',function(){
     window.scroll(0,0);
+    //window.scrollTo({top:0});
     location.reload();
+});
+logo.addEventListener('mouseenter',function(){
+    logo.classList.remove('animate__flipInY');
+    logo.classList.add('animate__flip');
+    logo.classList.add('animate__infinite');
+});
+logo.addEventListener('mouseleave',function(){
+    logo.classList.remove('animate__flip');
+    logo.classList.add('animate__infinite');
 });
 
 //Email function
@@ -1425,7 +1451,7 @@ document.querySelector('#blockList').addEventListener('mouseenter',function(){
     customT.style.top = posL + 15 + 'px';
     customT.style.left = posB + 20 + 'px';
     customT.style.display = 'block';
-    customT.innerHTML = 'Sort Large';
+    customT.innerHTML = 'Sort Chunk';
 });
 document.querySelector('#rendList').addEventListener('mouseenter',function(){
     let posB = event.pageX;
@@ -1433,7 +1459,7 @@ document.querySelector('#rendList').addEventListener('mouseenter',function(){
     customT.style.top = posL + 15 + 'px';
     customT.style.left = posB + 20 + 'px';
     customT.style.display = 'block';
-    customT.innerHTML = 'Sort Small';
+    customT.innerHTML = 'Sort Detail';
 });
 
 document.querySelector('#blockList').addEventListener('mouseleave',function(){
