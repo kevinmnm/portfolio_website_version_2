@@ -1196,12 +1196,12 @@ logo.addEventListener('click',function(){
     //window.scrollTo({top:0});
     location.reload();
 });
-logo.addEventListener('mouseenter',function(){
+logo.addEventListener('mouseover',function(){
     logo.classList.remove('animate__flipInY');
     logo.classList.add('animate__flip');
     logo.classList.add('animate__infinite');
 });
-logo.addEventListener('mouseleave',function(){
+logo.addEventListener('mouseout',function(){
     logo.classList.remove('animate__flip');
     logo.classList.add('animate__infinite');
 });
