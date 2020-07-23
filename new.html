@@ -755,11 +755,6 @@ li::before{
 <div id='myself'>
     <div class='pp pop2'>
         <img class='profile' src='img/pp.png' alt='Profile Picture' v-show='whichPic'/>
-        <!--
-        Add this if you want to set interval pic change: @mouseenter='slid()' @mouseleave='slidd()
-        <img class='profile' src='img/pp3.jpg' alt='Profile Picture #3' style='opacity:1;' v-show='!whichPic'/>
-        <img class='profile' src='img/pp3.jpg' alt='Profile Picture #3' style='opacity:1;' v-show='!whichPic'/>
-        -->
     </div>
     <div class='who pop2'>
         <div class='choose'>
@@ -780,7 +775,7 @@ li::before{
     <i id='blockList' class="fa fa-th-large" aria-hidden="true"></i>
     <i id='rendList' class="fa fa-list opaci" aria-hidden="true"></i>
 </div>
-<!--<hr class='theHr' style='border-color:rgba(22, 22, 22, 0.712); margin-top: 20px;'>-->
+
 <div id='sortBy'>
     <i id='utility' class="fa fa-lightbulb-o sort"></i>
     <i id='website' class="fa fa-window-maximize sort"></i>
@@ -808,6 +803,11 @@ li::before{
         '></project-hover>
         <img src='img/cardGame1.png' v-if='switchh'></img>
         <img src='img/cardGame2.png' v-else></img>
+    </div>
+    <div class='project pop2' @mouseenter='switcher()' @mouseleave='switcherEnd()'>
+        <project-hover title='Sticky Notes' content='
+            Cuztomizable sticky notes!
+        '></project-hover>
     </div>
 
     <!--<div id='showMore' @click='showMore()' v-show='!shower'>Show More</div>-->
@@ -922,6 +922,11 @@ let allProjects = [
         desc: 'Fun card matching game! Play against AI and stack up your win rate!',
         category: '<i class="fa fa-gamepad in-gam"></i>'
     }, 
+    {
+        title: 'Sticky Notes',
+        desc: 'Customizable sticky notes!',
+        category: '<i class="fa fa-lightbulb-o in-uti"></i>'
+    },
     {
         title: 'Rock Paper Scissor Game',
         desc: 'Rock Paper Scissor game. Play against AI built with JavaScript.',
