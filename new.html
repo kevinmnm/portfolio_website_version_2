@@ -23,6 +23,7 @@
     - Menu bar pop-up debouncing..?
     - Learn how to embed code.io and such.
     - Puzzle game project.
+    - Connect all the links for projects.
 */
 
 /* width */
@@ -754,7 +755,7 @@ li::before{
 <div class='amTitle pop'>About Me</div>
 <div id='myself'>
     <div class='pp pop2'>
-        <img class='profile' src='img/pp.png' alt='Profile Picture' v-show='whichPic'/>
+        <img class='profile' src='img/pp.png' alt='Profile Picture' v-show='whichPic' draggable='false'/>
     </div>
     <div class='who pop2'>
         <div class='choose'>
@@ -803,6 +804,11 @@ li::before{
         '></project-hover>
         <img src='img/cardGame1.png' v-if='switchh'></img>
         <img src='img/cardGame2.png' v-else></img>
+    </div>
+    <div class='project pop2' @mouseenter='switcher()' @mouseleave='switcherEnd()'>
+        <project-hover title='A Knowledge A Day' content='
+            Learning progress archives that I started on 7/1/2020
+        '></project-hover>
     </div>
     <div class='project pop2' @mouseenter='switcher()' @mouseleave='switcherEnd()'>
         <project-hover title='Sticky Notes' content='
@@ -921,7 +927,12 @@ let allProjects = [
         title: 'Card Match Game',
         desc: 'Fun card matching game! Play against AI and stack up your win rate!',
         category: '<i class="fa fa-gamepad in-gam"></i>'
-    }, 
+    },
+    {
+        title: 'A Knowledge A Day',
+        desc: 'Learning progress archives that I started on 7/1/2020',
+        category: '<i class="fa fa-lightbulb-o in-uti"></i>'
+    },
     {
         title: 'Sticky Notes',
         desc: 'Customizable sticky notes!',
