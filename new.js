@@ -139,7 +139,8 @@ const projects = new Vue({
         switchh: true,
         switchhh: true,
         sw: true,
-        commm: true
+        commm: true,
+        vid: false
     },
     methods: {
         switcher: function(){
