@@ -94,97 +94,15 @@
 </div>
 
 <div id='projects'>
-    <div class='project pop2' @mouseenter='switcher()' @mouseleave='switcherEnd()'>
-        <project-hover title='Website v1.0.0' content='
-            Portfolio website version 1. See how much I improved since! The website you are currently viewing is v2.
-        '></project-hover>
-        <img src='img/v1_1.png' v-if='switchh'></img>
-        <img src='img/v1_2.png' v-else></img>
-    </div>
-    <div class='project pop2' @mouseenter='switcher2()' @mouseleave='switcherEnd2()'>
-        <project-hover title='Compact Note Generator 'content='
-            CVS Specialty Pharmacy note creator. This application is in used among many BV agents today. Find out about its main funtionality and many hidden perks.
-        '></project-hover>
-        <img src='img/CNG1.png' v-if='switchhh'></img>
-        <img src='img/CNG2.png' v-else></img>
-    </div>
-    <div class='project pop2' @mouseenter='switcher()' @mouseleave='switcherEnd()'>
-        <project-hover title='Card Match Game' content='
-            Fun card matching game! Play against AI and stack up your win rate!
-        '></project-hover>
-        <img src='img/cardGame1.png' v-if='switchh'></img>
-        <img src='img/cardGame2.png' v-else></img>
-    </div>
-    <div class='project pop2' @mouseenter='switcher()' @mouseleave='switcherEnd()'>
-        <project-hover title='A Knowledge A Day' content='
-            Learning progress archives that I started on 7/1/2020
-        '></project-hover>
-    </div>
-    <div class='project pop2' >
-        <project-hover title='Sticky Notes' content='
-            Cuztomizable sticky notes!
-        '></project-hover>
-    </div>
+    
+    <projects-comp 
+    v-for='all in allP' 
+    :title-prop='all.title' 
+    :desc-prop='all.desc' 
+    :vid-prop='all.vid'>
+        
+    </projects-comp>
 
-    <!--<div id='showMore' @click='showMore()' v-show='!shower'>Show More</div>-->
-
-    <div class='project pop2' @mouseenter='swf()' @mouseleave='swfEnd()'>
-        <project-hover title='Rock Paper Scissor' content='
-            Rock Paper Scissor game. Play against AI built with JavaScript.
-        '></project-hover>
-        <img src='img/RPSGame.png' v-if='sw'></img>
-        <img src='img/RPSGame2.png' v-else></img>
-    </div>
-    <div class='project pop2' @mouseenter='come()' @mouseleave='comeEnd()'>
-        <project-hover title='E-Commerce Website' content='
-            Responsive e-commerce website.
-        '></project-hover>
-        <img src='img/eCommerce.png' v-if='commm'></img>
-        <img src='img/eCommerce2.png' v-else></img>
-    </div>
-    <div class='project pop2'>
-        <project-hover title='Flash Cards' content='
-            Flash card application with responsive design implication.
-        '></project-hover>
-        <img src='img/flashCard.png'></img>
-    </div>
-    <div class='project pop2'>
-        <project-hover title='Finance Book' content='
-            Finance book in Korean language. Built for my Korean friend who wanted simpler approach to archive finance history.
-        '></project-hover>
-        <img src='img/financeBook.png'></img>
-    </div>
-    <div class='project pop2' @mouseenter='switcher()' @mouseleave='switcherEnd()'>
-        <project-hover title='Furnished BV Template' content='
-            Refined template guide for CVS BV specialty agents. Still widely in use even today.
-        '></project-hover>
-        <img src='img/FBT1.png' v-if='switchh'></img>
-        <img src='img/FBT2.png' v-else></img>
-    </div>
-    <div class='project pop2'>
-        <project-hover title='IT Note Creator' content='
-            Created for personal use. Auto note creator for my current job - Global Service Desk IT department.
-        '></project-hover>
-        <img src='img/GSD.png'></img>
-    </div>
-    <div class='project pop2'>
-        <project-hover title='Stop Watch' content='
-            Stop watch with advanced functionality.
-        '></project-hover>
-        <img src='img/timer.png'></img>
-    </div>
-    <div class='project pop2'>
-        <project-hover title='Fish Farm Game' content='
-            Fish Fram game prototype for future development.
-        '></project-hover>
-        <img src='img/fishGame.png'></img>
-    </div>
-    <div class='project pop2'>
-        <project-hover title='Clicker Game' content='
-            Monster clicker game. Click fast and use skill to beat the monster before it beats you!
-        '></project-hover>
-        <img src='img/monsterGame.png'></img>
-    </div>
 </div>
 
 <div id='projects-list'>

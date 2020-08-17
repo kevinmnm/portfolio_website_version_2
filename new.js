@@ -9,98 +9,112 @@ let allProjects = [
         desc: 'Portfolio website version 1. See how much I improved since! The website you are currently viewing is v2.',
         category: '<i class="fa fa-window-maximize in-win"></i>',
         github: 'https://github.com/kevinmnm/portfolio_website_version_1',
-        link: '/projects/websiteV1/index.html'
+        link: '/projects/websiteV1/index.html',
+        vid: ''
     },
     { 
         title: 'Compact Note Generator',
         desc: 'CVS Specialty Pharmacy note creator. This application is in used among many BV agents today. Find out about its main funtionality and many hidden perks.',
         category: '<i class="fa fa-lightbulb-o in-uti"></i>',
         github: 'https://github.com/kevinmnm/compact_note_generator',
-        link: '/projects/CNG/CNG.html'
+        link: '/projects/CNG/CNG.html',
+        vid: ''
     }, 
     {
         title: 'Card Match Game',
         desc: 'Fun card matching game! Play against AI and stack up your win rate!',
         category: '<i class="fa fa-gamepad in-gam"></i>',
         github: 'https://github.com/kevinmnm/card_game',
-        link: '/projects/cardGame/cardMatch.html'
+        link: '/projects/cardGame/cardMatch.html',
+        vid: ''
     },
     {
         title: 'A Knowledge A Day',
         desc: 'Learning progress archives that I started on 7/1/2020',
         category: '<i class="fa fa-lightbulb-o in-uti"></i>',
         github: 'https://github.com/kevinmnm/a_day_a_knowledge',
-        link: '/projects/ADAK.ADAK.html'
+        link: '/projects/ADAK.ADAK.html',
+        vid: ''
     },
     {
         title: 'Sticky Notes',
         desc: 'Customizable sticky notes!',
         category: '<i class="fa fa-lightbulb-o in-uti"></i>',
         github: 'https://github.com/kevinmnm/sticky_notes',
-        link: '/projects/stickyNotes/stickyNotes.html'
+        link: '/projects/stickyNotes/stickyNotes.html',
+        vid: 'projects/stickyNotes/stickyNotes.mp4'
     },
     {
         title: 'Rock Paper Scissor Game',
         desc: 'Rock Paper Scissor game. Play against AI built with JavaScript.',
         category: '<i class="fa fa-gamepad in-gam"></i>',
         github: 'https://github.com/kevinmnm/rock_paper_scissor_game',
-        link: '/projects/RPSGame/miniGame2.html'
+        link: '/projects/RPSGame/miniGame2.html',
+        vid: ''
     },
     {
         title: 'E-Commerce Website',
         desc: 'Responsive dummy e-commerce website.',
         category: '<i class="fa fa-window-maximize in-win"></i>',
         github: 'https://github.com/kevinmnm/e_commerce_website',
-        link: '/projects/e-commerce/eCommerce.html'
+        link: '/projects/e-commerce/eCommerce.html',
+        vid: ''
     }, 
     {
         title: 'Flash Cards Creator',
         desc: 'Flash card application with responsive design implication.',
         category: '<i class="fa fa-lightbulb-o in-uti"></i>',
         github: 'https://github.com/kevinmnm/flash_cards',
-        link: '/projects/FlashCards/flashCard.html'
+        link: '/projects/FlashCards/flashCard.html',
+        vid: ''
     },
     {
         title: 'Finance Book App',
         desc: 'Finance book in Korean language. Built for my Korean friend who wanted simpler approach to archive finance history.',
         category: '<i class="fa fa-lightbulb-o in-uti"></i>',
         github: 'https://github.com/kevinmnm/financial_book',
-        link: '/projects/financeBook/financeBook.html'
+        link: '/projects/financeBook/financeBook.html',
+        vid: ''
     }, 
     {
         title: 'IT Note Creator',
         desc: 'Created for personal use. Auto note creator for my current job - Global Service Desk IT department.',
         category: '<i class="fa fa-lightbulb-o in-uti"></i>',
         github: 'https://github.com/kevinmnm/gsd_note_creator',
-        link: '/projects/GSD/GSD.html'
+        link: '/projects/GSD/GSD.html',
+        vid: ''
     }, 
     {
         title: 'Stop Watch',
         desc: 'Stop watch with advanced functionality.',
         category: '<i class="fa fa-lightbulb-o in-uti"></i>',
         github: 'https://github.com/kevinmnm/stop_watch',
-        link: '/projects/stopWatch/timeClock.html'
+        link: '/projects/stopWatch/timeClock.html',
+        vid: ''
     }, 
     {
         title: 'Fish Farm Game',
         desc: 'Fish Fram game prototype for future development.',
         category: '<i class="fa fa-gamepad in-gam"></i>',
         github: 'https://github.com/kevinmnm/fish_farm_game',
-        link: ''
+        link: '',
+        vid: ''
     }, 
     {
         title: 'Clicker Game',
         desc: 'Monster clicker game. Click fast and use skill to beat the monster before it beats you!',
         category: '<i class="fa fa-gamepad in-gam"></i>',
         github: 'https://github.com/kevinmnm/monster_clicker_game',
-        link: ''
+        link: '',
+        vid: ''
     },
     {
         title: 'Furnished BV Template',
         desc: 'Refined template guide for CVS BV specialty agents. Still widely in use even today.',
         category: '<i class="fa fa-lightbulb-o in-uti"></i>',
         github: 'https://github.com/kevinmnm/furnished_bv_template',
-        link: ''
+        link: '',
+        vid: 'projects/stickyNotes/FBT.mp4'
     }
 ];
 
@@ -111,69 +125,60 @@ new Vue({
     }
 });
 
-Vue.component('project-hover',{
-    props: ['content', 'title'],
-    data: function(){
-        return {
-            
-        }
-    },
-    methods: {
-        hider: function(){
-            this.$el.style.opacity = '0';
-        },
-        hiderNot: function(){
-            this.$el.style.opacity = '1';
-        }
-    },
-    template: "<div class='cover' @mouseover='hider()' @mouseleave='hiderNot()'><div class='proTitle'>{{title}}<hr style='margin-top:0;'></div><p>{{content}}</p></div>"
+Vue.component("project-comp-desc", {
+    template: `
+        <div><slot></slot></div>
+    `
 });
 
-let sww;
-let comm;
-
 const projects = new Vue({
-	el: '#projects',
+    el: '#projects',
     data: {
         title: 'Projects',
-        switchh: true,
-        switchhh: true,
-        sw: true,
-        commm: true,
-        vid: false
+        allP: allProjects
     },
-    methods: {
-        switcher: function(){
-            interV = setInterval(()=>{
-                this.switchh = !this.switchh;
-            },1000);
-        },
-        switcherEnd: function(){
-            clearInterval(interV);
-        },
-        switcher2: function(){
-            interVV = setInterval(()=>{
-                this.switchhh = !this.switchhh;
-            },1000);
-        },
-        switcherEnd2: function(){
-            clearInterval(interVV);
-        },
-        swf: function(){
-            sww = setInterval(()=>{
-                this.sw = !this.sw;
-            },1000);
-        },
-        swfEnd: function(){
-            clearInterval(sww);
-        },
-        come: function(){
-            comm = setInterval(()=>{
-                this.commm = !this.commm;
-            },1000);
-        },
-        comeEnd: function(){
-            clearInterval(comm);
+    components: {
+        "projects-comp": {
+            template: `
+                <div class='project pop2' @mouseenter='hidee()' @mouseleave='showw()'>
+                    <div class='cover' v-if='!hide'>
+                        <div class='proTitle'>
+                            {{ titleProp }}
+                            <hr style='margin-top:0;'>
+                        </div>
+                        <div>{{ descProp }}</div>
+                    </div>
+                    <div v-else>
+                        <video controls preload='auto' @mouseenter='playVid($event)' @mouseleave='pauseVid($event)'>
+                            <source :src='vidProp' />
+                        </video>
+                    </div>
+                </div>
+            `,
+            props: ['title-prop', 'desc-prop', 'vid-prop'],
+            data(){
+                return {
+                    hide: false                
+                }
+            },
+            methods: {
+                hidee(){
+                    this.hide = true;
+                },
+                showw(){
+                    this.hide = false;
+                },
+                playVid(e){
+                    if (!e.target.play()){
+                        e.target.play();
+                    }
+                },
+                pauseVid(e){
+                    if (e.target.play()){
+                        e.target.pause();
+                    }
+                }
+            }
         }
     }
 });
@@ -187,7 +192,7 @@ const myself = new Vue({
         clk: true,
         whichPic: true,
         cList: ['Responsive UI/UX Designer','SEO & E-Commerce Marketing', 'Social Media Marketer', 'Bilingual: English & Korean', 'English/Korean Freelance Interpreter', 'TESOL Certified Teacher','CVS Specialty Pharmacy Agent'],
-        sList: ['HTML', '(S)CSS', 'JavaScript (Vanilla)', 'Vue.js', 'jQuery', 'GIT', 'Node.js', 'NPM', 'Webpack', 'MySQL'],
+        sList: ['HTML', '(S)CSS', 'JavaScript (Vanilla)', 'Vue.js', 'jQuery', 'GIT', 'Node.js', 'MySQL'],
     },
     methods: {
         clic1: function(){
