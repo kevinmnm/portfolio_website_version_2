@@ -141,10 +141,9 @@ const projects = new Vue({
     },
     components: {
         "projects-comp": {
-            template: `
-                <div>
-                <div class='folder' v-html='folder' v-show='folder_show'></div>
+            template: `             
                 <div class='project pop2' @mouseenter='hidee()' @mouseleave='showw()'>
+                <div class='folder' v-html='folder' @click='open_project(valProp)'></div>
                     <div class='cover' v-if='!hide'>
                         <div class='proTitle'>
                             {{ titleProp }}
@@ -158,24 +157,20 @@ const projects = new Vue({
                         </video>
                     </div>
                 </div>
-                </div>
             `,
-            props: ['title-prop', 'desc-prop', 'vid-prop'],
+            props: ['title-prop', 'desc-prop', 'vid-prop', 'val-prop'],
             data(){
                 return {
                     hide: false,
-                    folder: folder_icon     ,
-                    folder_show: false           
+                    folder: folder_icon                
                 }
             },
             methods: {
                 hidee(){
                     this.hide = true;
-                    this.folder_show = true;
                 },
                 showw(){
                     this.hide = false;
-                    this.folder_show = false;
                 },
                 playVid(e){
                     if (!e.target.play()){
@@ -187,8 +182,8 @@ const projects = new Vue({
                         e.target.pause();
                     }
                 },
-                opener(all){
-                    alert(all);
+                open_project(valProp){
+                    open(valProp.link);
                 }
             }
         }
