@@ -110,8 +110,8 @@
     <div class='list-all' v-for='all in allProj'>
         <div class='list-icon'>
             <div class='floatL' v-html='all.category'></div>
-            <a href='#' class='floatR fa fa-eye'></a> 
-            <a href='#' class='floatR fa fa-github' style='margin-right: 15px;'></a>
+            <a :href='all.link' target='_blank' class='floatR fa fa-eye'></a> 
+            <a :href='all.github' target='_blank' class='floatR fa fa-github' style='margin-right: 15px;'></a>
         </div>
         <div class='list-title'>
             <span>{{all.title}}</span>
