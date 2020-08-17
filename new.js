@@ -1,3 +1,5 @@
+import folder_icon from "./src/icon.js"
+
 //Global declarations
 let interV;
 let interVV;
@@ -140,6 +142,8 @@ const projects = new Vue({
     components: {
         "projects-comp": {
             template: `
+                <div>
+                <div class='folder' v-html='folder' v-show='folder_show'></div>
                 <div class='project pop2' @mouseenter='hidee()' @mouseleave='showw()'>
                     <div class='cover' v-if='!hide'>
                         <div class='proTitle'>
@@ -154,19 +158,24 @@ const projects = new Vue({
                         </video>
                     </div>
                 </div>
+                </div>
             `,
             props: ['title-prop', 'desc-prop', 'vid-prop'],
             data(){
                 return {
-                    hide: false                
+                    hide: false,
+                    folder: folder_icon     ,
+                    folder_show: false           
                 }
             },
             methods: {
                 hidee(){
                     this.hide = true;
+                    this.folder_show = true;
                 },
                 showw(){
                     this.hide = false;
+                    this.folder_show = false;
                 },
                 playVid(e){
                     if (!e.target.play()){
@@ -177,6 +186,9 @@ const projects = new Vue({
                     if (e.target.play()){
                         e.target.pause();
                     }
+                },
+                opener(all){
+                    alert(all);
                 }
             }
         }

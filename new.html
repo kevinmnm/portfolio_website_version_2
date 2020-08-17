@@ -96,10 +96,11 @@
 <div id='projects'>
     
     <projects-comp 
-    v-for='all in allP' 
+    v-for='(all,ind) in allP' 
     :title-prop='all.title' 
     :desc-prop='all.desc' 
-    :vid-prop='all.vid'>
+    :vid-prop='all.vid' 
+    @click='opener(all)'>
         
     </projects-comp>
 
@@ -134,6 +135,6 @@
     <a href='https://github.com/kevinmnm' target='_blank' class='fa fas fa-github animate__animated'></a>
 </div>
 
-<script src='new.js'></script>
+<script src='new.js' type='module'></script>
 </body>
 </html>
