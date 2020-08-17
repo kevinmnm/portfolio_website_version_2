@@ -35,8 +35,8 @@ let allProjects = [
         desc: 'Learning progress archives that I started on 7/1/2020',
         category: '<i class="fa fa-lightbulb-o in-uti"></i>',
         github: 'https://github.com/kevinmnm/a_day_a_knowledge',
-        link: 'projects/ADAK.ADAK.html',
-        vid: ''
+        link: 'projects/ADAK/ADAK.html',
+        vid: 'projects/ADAK/ADAK.mp4'
     },
     {
         title: 'Sticky Notes',
