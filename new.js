@@ -622,9 +622,9 @@ let currentPos = $(window).scrollTop();
 $(window).scroll(function(){
     let scrolled = $(window).scrollTop();
     if (scrolled > currentPos){
-        $('#navBar').slideUp(200);
+        $('#navBar').stop().slideUp(200);
     } else {
-        $('#navBar').slideDown(200);
+        $('#navBar').stop().slideDown(200);
     }
     currentPos = scrolled;
 });
