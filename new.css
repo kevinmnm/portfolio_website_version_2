@@ -549,6 +549,9 @@
   .cover p{
       padding: 20px;
   }
+  .proDesc{
+    padding: 10px;
+  }
   .proTitle{
       color: rgb(100,255,218);
       font-size: calc(1.7vh + 1.7vw);

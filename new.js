@@ -149,7 +149,7 @@ const projects = new Vue({
                             {{ titleProp }}
                             <hr style='margin-top:0;'>
                         </div>
-                        <div>{{ descProp }}</div>
+                        <div class='proDesc'>{{ descProp }}</div>
                     </div>
                     <div v-else>
                         <video controls preload='auto' @mouseenter='playVid($event)' @mouseleave='pauseVid($event)'>
