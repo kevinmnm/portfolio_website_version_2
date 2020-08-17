@@ -10,7 +10,7 @@ let allProjects = [
         category: '<i class="fa fa-window-maximize in-win"></i>',
         github: 'https://github.com/kevinmnm/portfolio_website_version_1',
         link: '/projects/websiteV1/index.html',
-        vid: ''
+        vid: 'projects/websiteV1/websiteV1.mp4'
     },
     { 
         title: 'Compact Note Generator',
@@ -18,7 +18,7 @@ let allProjects = [
         category: '<i class="fa fa-lightbulb-o in-uti"></i>',
         github: 'https://github.com/kevinmnm/compact_note_generator',
         link: '/projects/CNG/CNG.html',
-        vid: ''
+        vid: 'projects/CNG/CNG.mp4'
     }, 
     {
         title: 'Card Match Game',
@@ -26,7 +26,7 @@ let allProjects = [
         category: '<i class="fa fa-gamepad in-gam"></i>',
         github: 'https://github.com/kevinmnm/card_game',
         link: '/projects/cardGame/cardMatch.html',
-        vid: ''
+        vid: 'projects/cardGame/cardMatch.mp4'
     },
     {
         title: 'A Knowledge A Day',
@@ -50,7 +50,7 @@ let allProjects = [
         category: '<i class="fa fa-gamepad in-gam"></i>',
         github: 'https://github.com/kevinmnm/rock_paper_scissor_game',
         link: '/projects/RPSGame/miniGame2.html',
-        vid: ''
+        vid: 'projects/RPSGame/RPSGame.mp4'
     },
     {
         title: 'E-Commerce Website',
@@ -58,7 +58,7 @@ let allProjects = [
         category: '<i class="fa fa-window-maximize in-win"></i>',
         github: 'https://github.com/kevinmnm/e_commerce_website',
         link: '/projects/e-commerce/eCommerce.html',
-        vid: ''
+        vid: 'projects/e-commerce/eCommerce.mp4'
     }, 
     {
         title: 'Flash Cards Creator',
@@ -66,7 +66,7 @@ let allProjects = [
         category: '<i class="fa fa-lightbulb-o in-uti"></i>',
         github: 'https://github.com/kevinmnm/flash_cards',
         link: '/projects/FlashCards/flashCard.html',
-        vid: ''
+        vid: 'projects/FlashCards/flashCard.mp4'
     },
     {
         title: 'Finance Book App',
@@ -74,7 +74,7 @@ let allProjects = [
         category: '<i class="fa fa-lightbulb-o in-uti"></i>',
         github: 'https://github.com/kevinmnm/financial_book',
         link: '/projects/financeBook/financeBook.html',
-        vid: ''
+        vid: 'projects/financeBook/financeBook.mp4'
     }, 
     {
         title: 'IT Note Creator',
@@ -82,7 +82,7 @@ let allProjects = [
         category: '<i class="fa fa-lightbulb-o in-uti"></i>',
         github: 'https://github.com/kevinmnm/gsd_note_creator',
         link: '/projects/GSD/GSD.html',
-        vid: ''
+        vid: 'projects/GSD/GSD.mp4'
     }, 
     {
         title: 'Stop Watch',
@@ -98,7 +98,7 @@ let allProjects = [
         category: '<i class="fa fa-gamepad in-gam"></i>',
         github: 'https://github.com/kevinmnm/fish_farm_game',
         link: '',
-        vid: ''
+        vid: 'projects/fishFarmGame/fishFarmGame.mp4'
     }, 
     {
         title: 'Clicker Game',
@@ -106,15 +106,15 @@ let allProjects = [
         category: '<i class="fa fa-gamepad in-gam"></i>',
         github: 'https://github.com/kevinmnm/monster_clicker_game',
         link: '',
-        vid: ''
+        vid: 'projects/stopWatch/stopWatch.mp4'
     },
     {
         title: 'Furnished BV Template',
         desc: 'Refined template guide for CVS BV specialty agents. Still widely in use even today.',
         category: '<i class="fa fa-lightbulb-o in-uti"></i>',
         github: 'https://github.com/kevinmnm/furnished_bv_template',
-        link: '',
-        vid: 'projects/stickyNotes/FBT.mp4'
+        link: 'projects/FBT/FBT.html',
+        vid: 'projects/FBT/FBT.mp4'
     }
 ];
 
@@ -192,7 +192,7 @@ const myself = new Vue({
         clk: true,
         whichPic: true,
         cList: ['Responsive UI/UX Designer','SEO & E-Commerce Marketing', 'Social Media Marketer', 'Bilingual: English & Korean', 'English/Korean Freelance Interpreter', 'TESOL Certified Teacher','CVS Specialty Pharmacy Agent'],
-        sList: ['HTML', '(S)CSS', 'JavaScript (Vanilla)', 'Vue.js', 'jQuery', 'GIT', 'Node.js', 'MySQL'],
+        sList: ['HTML', '(S)CSS', 'JavaScript (Vanilla)', 'Vue.js', 'jQuery', 'GIT', 'Node.js', 'Webpack', 'MySQL'],
     },
     methods: {
         clic1: function(){
