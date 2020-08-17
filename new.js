@@ -11,7 +11,7 @@ let allProjects = [
         desc: 'Portfolio website version 1. See how much I improved since! The website you are currently viewing is v2.',
         category: '<i class="fa fa-window-maximize in-win"></i>',
         github: 'https://github.com/kevinmnm/portfolio_website_version_1',
-        link: '/projects/websiteV1/index.html',
+        link: 'projects/websiteV1/index.html',
         vid: 'projects/websiteV1/websiteV1.mp4'
     },
     { 
@@ -19,7 +19,7 @@ let allProjects = [
         desc: 'CVS Specialty Pharmacy note creator. This application is in used among many BV agents today. Find out about its main funtionality and many hidden perks.',
         category: '<i class="fa fa-lightbulb-o in-uti"></i>',
         github: 'https://github.com/kevinmnm/compact_note_generator',
-        link: '/projects/CNG/CNG.html',
+        link: 'projects/CNG/CNG.html',
         vid: 'projects/CNG/CNG.mp4'
     }, 
     {
@@ -27,7 +27,7 @@ let allProjects = [
         desc: 'Fun card matching game! Play against AI and stack up your win rate!',
         category: '<i class="fa fa-gamepad in-gam"></i>',
         github: 'https://github.com/kevinmnm/card_game',
-        link: '/projects/cardGame/cardMatch.html',
+        link: 'projects/cardGame/cardMatch.html',
         vid: 'projects/cardGame/cardMatch.mp4'
     },
     {
@@ -35,7 +35,7 @@ let allProjects = [
         desc: 'Learning progress archives that I started on 7/1/2020',
         category: '<i class="fa fa-lightbulb-o in-uti"></i>',
         github: 'https://github.com/kevinmnm/a_day_a_knowledge',
-        link: '/projects/ADAK.ADAK.html',
+        link: 'projects/ADAK.ADAK.html',
         vid: ''
     },
     {
@@ -43,7 +43,7 @@ let allProjects = [
         desc: 'Customizable sticky notes!',
         category: '<i class="fa fa-lightbulb-o in-uti"></i>',
         github: 'https://github.com/kevinmnm/sticky_notes',
-        link: '/projects/stickyNotes/stickyNotes.html',
+        link: 'projects/stickyNotes/stickyNotes.html',
         vid: 'projects/stickyNotes/stickyNotes.mp4'
     },
     {
@@ -51,7 +51,7 @@ let allProjects = [
         desc: 'Rock Paper Scissor game. Play against AI built with JavaScript.',
         category: '<i class="fa fa-gamepad in-gam"></i>',
         github: 'https://github.com/kevinmnm/rock_paper_scissor_game',
-        link: '/projects/RPSGame/miniGame2.html',
+        link: 'projects/RPSGame/miniGame2.html',
         vid: 'projects/RPSGame/RPSGame.mp4'
     },
     {
@@ -59,7 +59,7 @@ let allProjects = [
         desc: 'Responsive dummy e-commerce website.',
         category: '<i class="fa fa-window-maximize in-win"></i>',
         github: 'https://github.com/kevinmnm/e_commerce_website',
-        link: '/projects/e-commerce/eCommerce.html',
+        link: 'projects/e-commerce/eCommerce.html',
         vid: 'projects/e-commerce/eCommerce.mp4'
     }, 
     {
@@ -67,7 +67,7 @@ let allProjects = [
         desc: 'Flash card application with responsive design implication.',
         category: '<i class="fa fa-lightbulb-o in-uti"></i>',
         github: 'https://github.com/kevinmnm/flash_cards',
-        link: '/projects/FlashCards/flashCard.html',
+        link: 'projects/FlashCards/flashCard.html',
         vid: 'projects/FlashCards/flashCard.mp4'
     },
     {
@@ -75,7 +75,7 @@ let allProjects = [
         desc: 'Finance book in Korean language. Built for my Korean friend who wanted simpler approach to archive finance history.',
         category: '<i class="fa fa-lightbulb-o in-uti"></i>',
         github: 'https://github.com/kevinmnm/financial_book',
-        link: '/projects/financeBook/financeBook.html',
+        link: 'projects/financeBook/financeBook.html',
         vid: 'projects/financeBook/financeBook.mp4'
     }, 
     {
@@ -83,7 +83,7 @@ let allProjects = [
         desc: 'Created for personal use. Auto note creator for my current job - Global Service Desk IT department.',
         category: '<i class="fa fa-lightbulb-o in-uti"></i>',
         github: 'https://github.com/kevinmnm/gsd_note_creator',
-        link: '/projects/GSD/GSD.html',
+        link: 'projects/GSD/GSD.html',
         vid: 'projects/GSD/GSD.mp4'
     }, 
     {
@@ -91,15 +91,15 @@ let allProjects = [
         desc: 'Stop watch with advanced functionality.',
         category: '<i class="fa fa-lightbulb-o in-uti"></i>',
         github: 'https://github.com/kevinmnm/stop_watch',
-        link: '/projects/stopWatch/timeClock.html',
-        vid: ''
+        link: 'projects/stopWatch/timeClock.html',
+        vid: 'projects/stopWatch/stopWatch.mp4'
     }, 
     {
         title: 'Fish Farm Game',
         desc: 'Fish Fram game prototype for future development.',
         category: '<i class="fa fa-gamepad in-gam"></i>',
         github: 'https://github.com/kevinmnm/fish_farm_game',
-        link: '',
+        link: 'projects/fishFarmGame/miniGame3.html',
         vid: 'projects/fishFarmGame/fishFarmGame.mp4'
     }, 
     {
@@ -107,8 +107,8 @@ let allProjects = [
         desc: 'Monster clicker game. Click fast and use skill to beat the monster before it beats you!',
         category: '<i class="fa fa-gamepad in-gam"></i>',
         github: 'https://github.com/kevinmnm/monster_clicker_game',
-        link: '',
-        vid: 'projects/stopWatch/stopWatch.mp4'
+        link: 'projects/clickerGame/miniGame.html',
+        vid: 'projects/clickerGame/clickerGAme.mp4'
     },
     {
         title: 'Furnished BV Template',
