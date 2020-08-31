@@ -734,7 +734,7 @@
     cursor: alias;
     box-sizing: border-box;
     clear: right;
-  }
+  }.folder:hover{color:greenYellow;}
 
   @media only screen and (max-width: 1300px) {
     .folder{
