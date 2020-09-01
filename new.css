@@ -1,3 +1,5 @@
+@import "src/ribbon.css";
+
 /* width */
 ::-webkit-scrollbar {
     width: 10px;
@@ -560,6 +562,7 @@
       text-align: center;
       font-weight: bold;
       margin-left: 50px;
+      margin-right: 50px;
   }
   .opaciNone{opacity:0;}
   .project{
@@ -749,4 +752,36 @@
         height: 35px;
     }
   }
+
+
+  .github{
+   position: absolute;
+   display: block;
+   right: 0;
+   top: 0;
+   width: 7%;
+   height: 7%;
+   z-index: 2;
+   text-align: center;
+   padding: 5px;
+   border-radius: 5px;
+   color:rgb(100,255,218);
+   cursor: alias;
+   box-sizing: border-box;
+   clear: right;
+ }.github:hover{color:greenYellow;}
+
+ @media only screen and (max-width: 1300px) {
+   .github{
+       width: 50px;
+       height: 50px;
+   }
+ }
+
+ @media only screen and (max-width: 450px) {
+   .github{
+       width: 35px;
+       height: 35px;
+   }
+ }
 

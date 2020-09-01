@@ -1,4 +1,5 @@
 import folder_icon from "./src/icon.js"
+import github_icon from "./src/github-icon.js"
 
 //Global declarations
 let interV;
@@ -6,13 +7,23 @@ let interVV;
 let covers = document.querySelectorAll('.cover');
 let pp = document.querySelector('.pp');
 let allProjects = [
+   {
+      title: 'IniTravel Website',
+      desc: 'Website',
+      category: '<i class="fa fa-window-maximize in-win"></i>',
+      github: 'https://github.com/kevinmnm/ini_travel_website',
+      link: 'projects/initravel/',
+      vid: '',
+      new: true
+   },
     {
         title: 'Website Version 1.0.0',
         desc: 'Portfolio website version 1. See how much I improved since! The website you are currently viewing is v2.',
         category: '<i class="fa fa-window-maximize in-win"></i>',
         github: 'https://github.com/kevinmnm/portfolio_website_version_1',
         link: 'projects/websiteV1/index.html',
-        vid: 'projects/websiteV1/websiteV1.mp4'
+        vid: 'projects/websiteV1/websiteV1.mp4',
+        new: false
     },
     { 
         title: 'Compact Note Generator',
@@ -20,7 +31,8 @@ let allProjects = [
         category: '<i class="fa fa-lightbulb-o in-uti"></i>',
         github: 'https://github.com/kevinmnm/compact_note_generator',
         link: 'projects/CNG/CNG.html',
-        vid: 'projects/CNG/CNG.mp4'
+        vid: 'projects/CNG/CNG.mp4',
+        new: false
     }, 
     {
         title: 'Card Match Game',
@@ -28,7 +40,8 @@ let allProjects = [
         category: '<i class="fa fa-gamepad in-gam"></i>',
         github: 'https://github.com/kevinmnm/card_game',
         link: 'projects/cardGame/cardMatch.html',
-        vid: 'projects/cardGame/cardMatch.mp4'
+        vid: 'projects/cardGame/cardMatch.mp4',
+        new: false
     },
     {
         title: 'A Knowledge A Day',
@@ -36,7 +49,8 @@ let allProjects = [
         category: '<i class="fa fa-lightbulb-o in-uti"></i>',
         github: 'https://github.com/kevinmnm/a_day_a_knowledge',
         link: 'projects/ADAK/ADAK.html',
-        vid: 'projects/ADAK/ADAK.mp4'
+        vid: 'projects/ADAK/ADAK.mp4',
+        new: false
     },
     {
         title: 'Sticky Notes',
@@ -44,7 +58,8 @@ let allProjects = [
         category: '<i class="fa fa-lightbulb-o in-uti"></i>',
         github: 'https://github.com/kevinmnm/sticky_notes',
         link: 'projects/stickyNotes/stickyNotes.html',
-        vid: 'projects/stickyNotes/stickyNotes.mp4'
+        vid: 'projects/stickyNotes/stickyNotes.mp4',
+        new: false
     },
     {
         title: 'Rock Paper Scissor Game',
@@ -52,7 +67,8 @@ let allProjects = [
         category: '<i class="fa fa-gamepad in-gam"></i>',
         github: 'https://github.com/kevinmnm/rock_paper_scissor_game',
         link: 'projects/RPSGame/miniGame2.html',
-        vid: 'projects/RPSGame/RPSGame.mp4'
+        vid: 'projects/RPSGame/RPSGame.mp4',
+        new: false
     },
     {
         title: 'E-Commerce Website',
@@ -60,7 +76,8 @@ let allProjects = [
         category: '<i class="fa fa-window-maximize in-win"></i>',
         github: 'https://github.com/kevinmnm/e_commerce_website',
         link: 'projects/e-commerce/eCommerce.html',
-        vid: 'projects/e-commerce/eCommerce.mp4'
+        vid: 'projects/e-commerce/eCommerce.mp4',
+        new: false
     }, 
     {
         title: 'Flash Cards Creator',
@@ -68,7 +85,8 @@ let allProjects = [
         category: '<i class="fa fa-lightbulb-o in-uti"></i>',
         github: 'https://github.com/kevinmnm/flash_cards',
         link: 'projects/FlashCards/flashCard.html',
-        vid: 'projects/FlashCards/flashCard.mp4'
+        vid: 'projects/FlashCards/flashCard.mp4',
+        new: false
     },
     {
         title: 'Finance Book App',
@@ -76,7 +94,8 @@ let allProjects = [
         category: '<i class="fa fa-lightbulb-o in-uti"></i>',
         github: 'https://github.com/kevinmnm/financial_book',
         link: 'projects/financeBook/financeBook.html',
-        vid: 'projects/financeBook/financeBook.mp4'
+        vid: 'projects/financeBook/financeBook.mp4',
+        new: false
     }, 
     {
         title: 'IT Note Creator',
@@ -84,7 +103,8 @@ let allProjects = [
         category: '<i class="fa fa-lightbulb-o in-uti"></i>',
         github: 'https://github.com/kevinmnm/gsd_note_creator',
         link: 'projects/GSD/GSD.html',
-        vid: 'projects/GSD/GSD.mp4'
+        vid: 'projects/GSD/GSD.mp4',
+        new: false
     }, 
     {
         title: 'Stop Watch',
@@ -92,7 +112,8 @@ let allProjects = [
         category: '<i class="fa fa-lightbulb-o in-uti"></i>',
         github: 'https://github.com/kevinmnm/stop_watch',
         link: 'projects/stopWatch/timeClock.html',
-        vid: 'projects/stopWatch/stopWatch.mp4'
+        vid: 'projects/stopWatch/stopWatch.mp4',
+        new: false
     }, 
     {
         title: 'Fish Farm Game',
@@ -100,7 +121,8 @@ let allProjects = [
         category: '<i class="fa fa-gamepad in-gam"></i>',
         github: 'https://github.com/kevinmnm/fish_farm_game',
         link: 'projects/fishFarmGame/miniGame3.html',
-        vid: 'projects/fishFarmGame/fishFarmGame.mp4'
+        vid: 'projects/fishFarmGame/fishFarmGame.mp4',
+        new: false
     }, 
     {
         title: 'Clicker Game',
@@ -108,7 +130,8 @@ let allProjects = [
         category: '<i class="fa fa-gamepad in-gam"></i>',
         github: 'https://github.com/kevinmnm/monster_clicker_game',
         link: 'projects/clickerGame/miniGame.html',
-        vid: 'projects/clickerGame/clickerGAme.mp4'
+        vid: 'projects/clickerGame/clickerGame.mp4',
+        new: false
     },
     {
         title: 'Furnished BV Template',
@@ -116,7 +139,8 @@ let allProjects = [
         category: '<i class="fa fa-lightbulb-o in-uti"></i>',
         github: 'https://github.com/kevinmnm/furnished_bv_template',
         link: 'projects/FBT/FBT.html',
-        vid: 'projects/FBT/FBT.mp4'
+        vid: 'projects/FBT/FBT.mp4',
+        new: false
     }
 ];
 
@@ -144,7 +168,12 @@ const projects = new Vue({
             template: `             
                 <div class='project pop2' @mouseenter='hidee()' @mouseleave='showw()'>
                 <div class='folder' v-html='folder' @click='open_project(valProp)'></div>
+                <div class='github' v-html='github' @click='open_github(valProp)'></div>
                     <div class='cover' v-if='!hide'>
+                    <div class="ribbon-wrapper" v-show='valProp.new'>
+                        <div class="glow">&nbsp;</div>
+		                  <div class="ribbon-front">NEW</div>
+	                  </div>
                         <div class='proTitle'>
                             {{ titleProp }}
                             <hr style='margin-top:0;'>
@@ -162,7 +191,8 @@ const projects = new Vue({
             data(){
                 return {
                     hide: false,
-                    folder: folder_icon                
+                    folder: folder_icon       ,
+                    github: github_icon         
                 }
             },
             methods: {
@@ -184,6 +214,9 @@ const projects = new Vue({
                 },
                 open_project(valProp){
                     open(valProp.link);
+                },
+                open_github(valProp){
+                  open(valProp.github);
                 }
             }
         }
@@ -199,7 +232,7 @@ const myself = new Vue({
         clk: true,
         whichPic: true,
         cList: ['Responsive UI/UX Designer','SEO & E-Commerce Marketing', 'Social Media Marketer', 'Bilingual: English & Korean', 'English/Korean Freelance Interpreter', 'TESOL Certified Teacher','CVS Specialty Pharmacy Agent'],
-        sList: ['HTML', '(S)CSS', 'JavaScript (Vanilla)', 'Vue.js', 'jQuery', 'GIT', 'Node.js', 'Webpack', 'MySQL'],
+        sList: ['HTML', '(S)CSS', 'JavaScript (Vanilla)', 'Vue.js', 'Firebase', 'jQuery', 'GIT', 'Node.js', 'Webpack', 'MySQL'],
     },
     methods: {
         clic1: function(){
