@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="new.css">
+<link rel="stylesheet" href="src/ribbon.css">
 <style>
 /* 
     -Things to fix-
@@ -64,8 +65,8 @@
     </div>
     <div class='who pop2'>
         <div class='choose'>
-            <span class='choice' v-bind:class="{'opaci': !clk}" @click='clic1()'>Skill</span>
-            <span class='choice' v-bind:class="{'opaci': clk}" @click='clic2()'>Other</span>
+            <span class='choice' v-bind:class="{'opaci': !clk}" @click='clic1()'>Skills</span>
+            <span class='choice' v-bind:class="{'opaci': clk}" @click='clic2()'>Others</span>
         </div>
         <ul v-show='clk'>
             <li v-for='lis in sList'>{{lis}}</li>

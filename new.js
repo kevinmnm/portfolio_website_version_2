@@ -9,11 +9,11 @@ let pp = document.querySelector('.pp');
 let allProjects = [
    {
       title: 'IniTravel Website',
-      desc: 'Website',
+      desc: 'Indonesia Travel Guide website built with Vue CLI plus other useful repositories. This project is also integrated with Google Firebase to manipulate basic server side tasks including storage system and user registeration management. Watch the video or visit Github to see details.',
       category: '<i class="fa fa-window-maximize in-win"></i>',
       github: 'https://github.com/kevinmnm/ini_travel_website',
       link: 'projects/initravel/',
-      vid: '',
+      vid: 'projects/initravel/initravel.mp4',
       new: true
    },
     {
@@ -232,7 +232,7 @@ const myself = new Vue({
         clk: true,
         whichPic: true,
         cList: ['Responsive UI/UX Designer','SEO & E-Commerce Marketing', 'Social Media Marketer', 'Bilingual: English & Korean', 'English/Korean Freelance Interpreter', 'TESOL Certified Teacher','CVS Specialty Pharmacy Agent'],
-        sList: ['HTML', '(S)CSS', 'JavaScript (Vanilla)', 'Vue.js', 'Firebase', 'jQuery', 'GIT', 'Node.js', 'Webpack', 'MySQL'],
+        sList: ['HTML', '(S)CSS', 'JavaScript (Vanilla)', 'Vue.js', 'Firebase', 'jQuery', 'GIT', 'Node.js', 'Webpack', 'MySQL', 'Canva']
     },
     methods: {
         clic1: function(){
