@@ -18,7 +18,7 @@ let allProjects = [
    },
     {
         title: 'Website Version 1.0.0',
-        desc: 'Portfolio website version 1. See how much I improved since! The website you are currently viewing is v2.',
+        desc: 'My first portfolio website. See how much I improved since this project was developed. The website you are currently viewing is verion 2. Unlike the simplicity version 2 emphasizes, this project has lots of extra contents including my story of how I got into web development and more.',
         category: '<i class="fa fa-window-maximize in-win"></i>',
         github: 'https://github.com/kevinmnm/portfolio_website_version_1',
         link: 'projects/websiteV1/index.html',
@@ -27,7 +27,7 @@ let allProjects = [
     },
     { 
         title: 'Compact Note Generator',
-        desc: 'CVS Specialty Pharmacy note creator. This application is in used among many BV agents today. Find out about its main funtionality and many hidden perks.',
+        desc: 'CVS Specialty Pharmacy note creator. This project was my very second project ever. This project gave momentum for me to dive deeper into web development. I learned so much with this project as a beginner. This project is a real-world application and still being used by many people I work with.',
         category: '<i class="fa fa-lightbulb-o in-uti"></i>',
         github: 'https://github.com/kevinmnm/compact_note_generator',
         link: 'projects/CNG/CNG.html',
@@ -36,7 +36,7 @@ let allProjects = [
     }, 
     {
         title: 'Card Match Game',
-        desc: 'Fun card matching game! Play against AI and stack up your win rate!',
+        desc: 'Fun card matching game! Play against AI and stack up your win rate. Stats are saved locally.',
         category: '<i class="fa fa-gamepad in-gam"></i>',
         github: 'https://github.com/kevinmnm/card_game',
         link: 'projects/cardGame/cardMatch.html',
@@ -45,7 +45,7 @@ let allProjects = [
     },
     {
         title: 'A Knowledge A Day',
-        desc: 'Learning progress archives that I started on 7/1/2020',
+        desc: 'My personal learning tracker/archive. Note started on 7/1/2020. Developed for personal quick referencing guide. Developed to adhere to "learn at least one thing a day" to improve my web development skill. ',
         category: '<i class="fa fa-lightbulb-o in-uti"></i>',
         github: 'https://github.com/kevinmnm/a_day_a_knowledge',
         link: 'projects/ADAK/ADAK.html',
@@ -54,7 +54,7 @@ let allProjects = [
     },
     {
         title: 'Sticky Notes',
-        desc: 'Customizable sticky notes!',
+        desc: 'Developed upon one of my friend's request. Requester wanted to have specific sticky note design thus, all designs implemented are requested by my friend (by hand drawing) except for the dark mode function.',
         category: '<i class="fa fa-lightbulb-o in-uti"></i>',
         github: 'https://github.com/kevinmnm/sticky_notes',
         link: 'projects/stickyNotes/stickyNotes.html',
@@ -63,7 +63,7 @@ let allProjects = [
     },
     {
         title: 'Rock Paper Scissor Game',
-        desc: 'Rock Paper Scissor game. Play against AI built with JavaScript.',
+        desc: 'Fun Rock Paper Scissor game! Play against AI built with JavaScript.',
         category: '<i class="fa fa-gamepad in-gam"></i>',
         github: 'https://github.com/kevinmnm/rock_paper_scissor_game',
         link: 'projects/RPSGame/miniGame2.html',
@@ -72,7 +72,7 @@ let allProjects = [
     },
     {
         title: 'E-Commerce Website',
-        desc: 'Responsive dummy e-commerce website.',
+        desc: 'Responsive e-commerce website. Built mostly with jQuery.',
         category: '<i class="fa fa-window-maximize in-win"></i>',
         github: 'https://github.com/kevinmnm/e_commerce_website',
         link: 'projects/e-commerce/eCommerce.html',
@@ -81,7 +81,7 @@ let allProjects = [
     }, 
     {
         title: 'Flash Cards Creator',
-        desc: 'Flash card application with responsive design implication.',
+        desc: 'Flash card application with responsive design. Implemented Animate.css along with Vue transition for flip animation.',
         category: '<i class="fa fa-lightbulb-o in-uti"></i>',
         github: 'https://github.com/kevinmnm/flash_cards',
         link: 'projects/FlashCards/flashCard.html',
@@ -90,7 +90,7 @@ let allProjects = [
     },
     {
         title: 'Finance Book App',
-        desc: 'Finance book in Korean language. Built for my Korean friend who wanted simpler approach to archive finance history.',
+        desc: 'Finance tracker in Korean language. Built for my Korean friend who wanted simpler approach to manage finance history.',
         category: '<i class="fa fa-lightbulb-o in-uti"></i>',
         github: 'https://github.com/kevinmnm/financial_book',
         link: 'projects/financeBook/financeBook.html',
@@ -99,7 +99,7 @@ let allProjects = [
     }, 
     {
         title: 'IT Note Creator',
-        desc: 'Created for personal use. Auto note creator for my current job - Global Service Desk IT department.',
+        desc: 'Developed for my current work-related use. As I was transferred to IT department in my current company, I needed an application that can auto-generate case note. I use this application everyday at my work.',
         category: '<i class="fa fa-lightbulb-o in-uti"></i>',
         github: 'https://github.com/kevinmnm/gsd_note_creator',
         link: 'projects/GSD/GSD.html',
@@ -108,7 +108,7 @@ let allProjects = [
     }, 
     {
         title: 'Stop Watch',
-        desc: 'Stop watch with advanced functionality.',
+        desc: 'Simple stop watch application with advanced functionality.',
         category: '<i class="fa fa-lightbulb-o in-uti"></i>',
         github: 'https://github.com/kevinmnm/stop_watch',
         link: 'projects/stopWatch/timeClock.html',
@@ -126,7 +126,7 @@ let allProjects = [
     }, 
     {
         title: 'Clicker Game',
-        desc: 'Monster clicker game. Click fast and use skill to beat the monster before it beats you!',
+        desc: 'Monster clicker game! Click fast and use skills to beat the monster before it beats you.',
         category: '<i class="fa fa-gamepad in-gam"></i>',
         github: 'https://github.com/kevinmnm/monster_clicker_game',
         link: 'projects/clickerGame/miniGame.html',
@@ -135,7 +135,7 @@ let allProjects = [
     },
     {
         title: 'Furnished BV Template',
-        desc: 'Refined template guide for CVS BV specialty agents. Still widely in use even today.',
+        desc: 'My very first project ever. This project allowed me to comprehend basic HTML, CSS, and simple JavaScript logics starting out as a beginner.',
         category: '<i class="fa fa-lightbulb-o in-uti"></i>',
         github: 'https://github.com/kevinmnm/furnished_bv_template',
         link: 'projects/FBT/FBT.html',
