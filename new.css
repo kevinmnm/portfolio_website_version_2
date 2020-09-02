@@ -825,3 +825,16 @@
    }
  }
 
+.new-content{
+   position: absolute;
+   font-size: 16px;
+   color: greenYellow;
+   width: 50px;
+   font-weight: bold;
+   left: calc(50% - 25px);
+   top: 15px;
+
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+   text-rendering: optimizeLegibility;
+} 
