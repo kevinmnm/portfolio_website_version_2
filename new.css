@@ -39,11 +39,11 @@
       box-sizing: border-box;
       color: rgb(100,255,218);
       font-family: 'Nunito', sans-serif;
-      font-size: calc(0.7vh + 0.7vw);
+      /* font-size: calc(0.7vh + 0.7vw); */
+      font-size: 20px;
       z-index: 5;
       /*border-bottom: 0.1px solid #1e2126;*/
       background-color: rgba(33, 35, 41, 0.6);
-      padding: 5px;
       /*border-radius: 5px;*/
       /*box-shadow: 0 0 2px black;*/
       user-select: none;
@@ -72,6 +72,7 @@
   *****/
   .nav-menu{
       visibility: hidden;
+      margin: 5px;
   }
   .nav-menu:hover{
       color: greenYellow;

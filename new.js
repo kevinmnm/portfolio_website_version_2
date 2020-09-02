@@ -420,7 +420,8 @@ window.onload = ()=>{
         $('#navBar').css({
             'width':'95%',
             'margin':'auto',
-            'left':'0'
+            'left':'0',
+            'font-size':'15px'
         });
         $('.social-media-bottom').css({
             'display':'flex'
@@ -458,7 +459,8 @@ window.onresize = ()=>{
         $('#navBar').css({
             'width':'95%',
             'margin':'auto',
-            'left':'0'
+            'left':'0',
+            'font-size': '15px'
         });
         $('.social-media-bottom').css({
             'display':'flex'
@@ -489,7 +491,8 @@ window.onresize = ()=>{
         $('#navBar').css({
             'width':'70%',
             'right':'0',
-            'margin-right':'50px'
+            'margin-right':'50px',
+            'font-size':'20px'
         });
         $('.social-media-bottom').css({
             'display':'none'
@@ -655,9 +658,9 @@ let currentPos = $(window).scrollTop();
 $(window).scroll(function(){
     let scrolled = $(window).scrollTop();
     if (scrolled > currentPos){
-        $('#navBar').stop().slideUp(200);
+        $('#navBar').stop().slideUp(100);
     } else {
-        $('#navBar').stop().slideDown(200);
+        $('#navBar').stop().slideDown(100);
     }
     currentPos = scrolled;
 });
