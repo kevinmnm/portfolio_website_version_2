@@ -9,8 +9,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="new.css">
 <link rel="stylesheet" href="src/ribbon.css">
+<link rel="stylesheet" href="src/glow-horizon.css">
+<link rel="stylesheet" href="new.css">
+
+
 <style>
 /* 
     -Things to fix-
@@ -34,6 +37,7 @@
     <span class='nav-menu animate__animated'>Contact</span>
 </div>
 <div id='sideL' class='sider-left'>
+   <div class='glower'></div>
     <div class='logo-wrap'>
          <div id='logo'>K</div>
     </div>
@@ -46,6 +50,7 @@
     </div>
 </div>
 <div id='sideR' class='sider-right email'>
+   <div class='glower'></div>
     <marquee id='marq' @mouseenter='stopi()' @mouseleave='starti()'direction='down' width='100%' height='100%'>{{text}}</marquee>
     <div class='domain-name'></div>
 </div>

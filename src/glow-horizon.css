@@ -1,0 +1,85 @@
+@-webkit-keyframes flow {
+   0% {
+     top: -40px;
+     opacity: 0;
+   }
+   50% {
+     top: 50%;
+     opacity: 0.3;
+   }
+   100% {
+     top: 100%;
+     opacity: 0;
+   }
+ }
+ @keyframes flow {
+   0% {
+     top: -40px;
+     opacity: 0;
+   }
+   50% {
+     top: 50%;
+     opacity: 0.3;
+   }
+   100% {
+     top: 100%;
+     opacity: 0;
+   }
+ }
+ 
+ .glow-horizon {
+   background: rgb(255, 255, 255);
+   height: 40px;
+   z-index: -1;
+   width: 100%;
+   z-index: 999;
+   position: absolute;
+   -webkit-animation: flow 0.8s linear 1;
+   -moz-animation: flow 0.8s linear 1;
+   animation: flow 0.8s linear 1;
+ /**
+   -webkit-transform: skew(20deg);
+   -moz-transform: skew(20deg);
+   -o-transform: skew(20deg);
+ **/
+   background: -moz-linear-gradient(
+     left,
+     rgba(255, 255, 255, 0) 0%,
+     rgba(255, 255, 255, 0) 1%,
+     rgba(255, 255, 255, 0) 100%
+   ); /* FF3.6+ */
+   background: -webkit-gradient(
+     linear,
+     left top,
+     right top,
+     color-stop(0%, rgba(255, 255, 255, 0)),
+     color-stop(1%, rgba(255, 255, 255, 0)),
+     color-stop(100%, rgba(255, 255, 255, 1))
+   ); /* Chrome,Safari4+ */
+   background: -webkit-linear-gradient(
+     left,
+     rgba(255, 255, 255, 0) 0%,
+     rgba(255, 255, 255, 0.5) 1%,
+     rgba(255, 255, 255, 1) 100%
+   ); /* Chrome10+,Safari5.1+ */
+   background: -o-linear-gradient(
+     left,
+     rgba(255, 255, 255, 0) 0%,
+     rgba(255, 255, 255, 0) 1%,
+     rgba(255, 255, 255, 1) 100%
+   ); /* Opera 11.10+ */
+   background: -ms-linear-gradient(
+     left,
+     rgba(255, 255, 255, 0) 0%,
+     rgba(255, 255, 255, 0.5) 1%,
+     rgba(255, 255, 255, 1) 100%
+   ); /* IE10+ */
+   background: linear-gradient(
+     to bottom,
+     rgba(255, 255, 255, 0) 0%,
+     rgba(100, 255, 218, 0.5) 1%,
+     rgba(100, 255, 218) 100%
+   ); /* W3C */
+   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
+   border-bottom: 1px solid #fff;
+ }

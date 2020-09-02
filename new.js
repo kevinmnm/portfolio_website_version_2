@@ -6,6 +6,7 @@ let interV;
 let interVV;
 let covers = document.querySelectorAll('.cover');
 let pp = document.querySelector('.pp');
+let navItem = document.querySelectorAll('.nav-menu');
 let allProjects = [
    {
       title: 'IniTravel Website',
@@ -325,7 +326,7 @@ const aboutMe = new Vue({
                         },time);
                         time += 100;
                     }
-                    let navItem = document.querySelectorAll('.nav-menu');
+                    
                     for (let i=0; i<navItem.length; i++){
                         setTimeout(()=>{
                             document.querySelector('#navBar').style.visibility = 'visible';
@@ -709,4 +710,20 @@ document.addEventListener('scroll', ()=>{
 
 document.querySelector('#resume').addEventListener('click', function(){
     window.open('resume/resume.pdf');
+});
+
+
+document.querySelectorAll('.glower').forEach( item => {
+   item.addEventListener('animationend', () => {
+      item.style.display = 'none';
+   });
+});
+
+let last_navItem = navItem[navItem.length - 1];
+let glowers = document.querySelectorAll('.glower');
+
+last_navItem.addEventListener('animationend', () => {
+   for (let i=0; i<glowers.length; i++){
+      glowers[i].classList.add('glow-horizon');
+   }
 });
