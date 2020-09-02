@@ -393,8 +393,9 @@
   li::before{
       content: '\25BA  ';
       color: greenYellow;  
-      width: 1em;
-      margin-left: -1.2em;
+      font-size: 20px;
+      margin-left: -20px;
+      /* margin-left: -1.2em; */
   }
   .choose{display: flex;}
   .choice{
@@ -543,6 +544,8 @@
       cursor: pointer;
       font-family: 'Nunito', sans-serif;
       font-size: calc(0.8vh + 1vw);
+      word-wrap: break-word;
+      overflow: hidden;
   }
   .cover hr{
       border-color: rgb(100,255,218);
