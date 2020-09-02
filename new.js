@@ -287,9 +287,9 @@ const aboutMe = new Vue({
             let nnn = document.querySelector('.sky_blue');
             let bbb = document.querySelector('.chocolate');
             let marq = document.querySelector('#marq');
+            window.scroll(0,0);
             document.body.style.overflow = 'hidden';
             marq.stop();
-            
             if (this.iCount < this.txt.length){
                 mmm.innerHTML += this.txt.charAt(this.iCount);
                 this.iCount++;
