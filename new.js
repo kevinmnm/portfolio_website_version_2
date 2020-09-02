@@ -286,6 +286,7 @@ const aboutMe = new Vue({
             let nnn = document.querySelector('.sky_blue');
             let bbb = document.querySelector('.chocolate');
             let marq = document.querySelector('#marq');
+            document.body.style.overflow = 'hidden';
             marq.stop();
             
             if (this.iCount < this.txt.length){
@@ -308,7 +309,8 @@ const aboutMe = new Vue({
                 bbb.innerHTML += '<b class="white">;</b>';
                 setTimeout(()=>{this.ended = !this.ended;},40);
                 this.$el.addEventListener('animationend', () => {
-                	document.querySelector('.intro').style.visibility = 'visible';
+                    document.body.style.overflow = 'auto';
+                	  document.querySelector('.intro').style.visibility = 'visible';
                     document.querySelector('.intro').classList.add('animate__animated');
                     document.querySelector('.intro').classList.add('animate__backInDown');
                     document.querySelector('#logo').style.display = 'block';

@@ -80,6 +80,7 @@
   .nav-menu:hover{
       color: greenYellow;
       cursor: pointer;
+      font-weight: bold;
   }
   
   .sider-left{
