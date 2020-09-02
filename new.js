@@ -354,6 +354,7 @@ aboutMe.typeWriter();
 //Vanilla JS
 let listAll = document.querySelectorAll('.list-all');
 let logo = document.querySelector('#logo');
+let logo_wrap = document.querySelector('.logo-wrap');
 let desc = document.querySelector('#desc');
 let sideRR = document.querySelector('#sideR');
 let sideLL = document.querySelector('#sideL');
@@ -372,17 +373,17 @@ let amTitle = document.querySelectorAll('.amTitle');
 let email = document.querySelectorAll('.email');
 
 //Buttons onclick event listeners
-logo.addEventListener('click',function(){
+logo_wrap.addEventListener('click',function(){
     window.scroll(0,0);
     //window.scrollTo({top:0});
     location.reload();
 });
-logo.addEventListener('mouseover',function(){
+logo_wrap.addEventListener('mouseenter',function(){
     logo.classList.remove('animate__flipInY');
     logo.classList.add('animate__flip');
     logo.classList.add('animate__infinite');
 });
-logo.addEventListener('mouseout',function(){
+logo_wrap.addEventListener('mouseleave',function(){
     logo.classList.remove('animate__flip');
     logo.classList.add('animate__infinite');
 });

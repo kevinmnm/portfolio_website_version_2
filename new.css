@@ -108,6 +108,21 @@
     transition: all 0.2s ease-out;
   }
 
+  .logo-wrap{
+   position: realtive;
+   top: 0;
+   left: 0;
+   box-sizing: border-box;
+   border-radius: 50%;
+   width: 35px;
+   height: 35px;
+   margin: auto;
+   margin-top: 10px;
+   cursor: pointer;
+   user-select: none;
+   background: rgb(0,0,0,0);
+  }
+
   #logo{
       position: relative;
       top: 0;
@@ -128,6 +143,7 @@
       transition: all 0.5s linear;
       user-select: none;
       display: none;
+      z-index: 1;
   }
   #logo:hover{
       background-color: rgb(100,255,218);
