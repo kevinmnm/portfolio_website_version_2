@@ -47,8 +47,12 @@
       /*border-radius: 5px;*/
       /*box-shadow: 0 0 2px black;*/
       user-select: none;
+      padding: 15px;
   }
-  #navBar:hover{background-color: rgba(33, 35, 41);}
+  #navBar:hover{
+     background-color: rgba(33, 35, 41);
+     box-shadow: 0 0 5px black;
+   }
   
   /*****
   #navBar{
@@ -72,7 +76,6 @@
   *****/
   .nav-menu{
       visibility: hidden;
-      margin: 5px;
   }
   .nav-menu:hover{
       color: greenYellow;
@@ -230,7 +233,15 @@
       z-index: 1;
       visibility: hidden;
       width: 50%;
+      padding: 2px;
   }
+
+  @media only screen and (max-width: 600px) {
+      .intro{
+         font-size: 15px;
+         padding: 2px;
+      }
+   }
   
   #stickNav{
       position: absolute;
@@ -336,19 +347,26 @@
       margin-bottom: 50px;
       margin-top: 500px;
   }
+
+  @media only screen and (max-width: 600px) {
+   .amTitle{
+      font-size: 35px;
+   }  
+ }
+
   @media only screen and (min-width: 600px) {
-  .amTitle::before,
-  .amTitle::after {
-      content: "";
-      display: inline-block;
-      height: 1px;
-      width: 10%;
-      background-color: darkGrey;
-      color: white;
-      position: relative;
-      top: -5px;
-      margin: 10px;
-  }
+   .amTitle::before,
+   .amTitle::after {
+         content: "";
+         display: inline-block;
+         height: 1px;
+         width: 10%;
+         background-color: darkGrey;
+         color: white;
+         position: relative;
+         top: -5px;
+         margin: 10px;
+   }
   }
   /*.amTitle:hover{text-decoration: underline wavy greenYellow;}*/
   #myself{

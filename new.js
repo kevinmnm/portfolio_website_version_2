@@ -54,7 +54,7 @@ let allProjects = [
     },
     {
         title: 'Sticky Notes',
-        desc: 'Developed upon one of my friend's request. Requester wanted to have specific sticky note design thus, all designs implemented are requested by my friend (by hand drawing) except for the dark mode function.',
+        desc: "Developed upon one of my friend's request. Requester wanted to have specific sticky note design thus, all designs implemented are requested by my friend (by hand drawing) except for the dark mode function.",
         category: '<i class="fa fa-lightbulb-o in-uti"></i>',
         github: 'https://github.com/kevinmnm/sticky_notes',
         link: 'projects/stickyNotes/stickyNotes.html',
@@ -403,7 +403,7 @@ window.onload = ()=>{
     if (window.innerWidth < 600){    
         sideRR.style.display = 'none';
         sideLL.style.display = 'none';
-        $('.intro, #about-me, #expla #resume').css({
+        $('.intro, #about-me, #expla, #resume').css({
             'margin-left':'10px',
             'margin-right':'10px'
         });
@@ -461,7 +461,8 @@ window.onresize = ()=>{
             'width':'95%',
             'margin':'auto',
             'left':'0',
-            'font-size': '15px'
+            'font-size': '15px',
+            'padding': '10px'
         });
         $('.social-media-bottom').css({
             'display':'flex'
@@ -493,7 +494,8 @@ window.onresize = ()=>{
             'width':'70%',
             'right':'0',
             'margin-right':'50px',
-            'font-size':'20px'
+            'font-size':'20px',
+            'padding': '15px'
         });
         $('.social-media-bottom').css({
             'display':'none'
