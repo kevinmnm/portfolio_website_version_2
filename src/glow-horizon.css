@@ -1,4 +1,4 @@
-@-webkit-keyframes flow {
+@-webkit-keyframes flow-horizon {
    0% {
      top: -40px;
      opacity: 0;
@@ -12,7 +12,7 @@
      opacity: 0;
    }
  }
- @keyframes flow {
+ @keyframes flow-horizon {
    0% {
      top: -40px;
      opacity: 0;
@@ -34,9 +34,9 @@
    width: 100%;
    z-index: 999;
    position: absolute;
-   -webkit-animation: flow 0.8s linear 1;
-   -moz-animation: flow 0.8s linear 1;
-   animation: flow 0.8s linear 1;
+   -webkit-animation: flow-horizon 0.8s linear 1;
+   -moz-animation: flow-horizon 0.8s linear 1;
+   animation: flow-horizon 0.8s linear 1;
  /**
    -webkit-transform: skew(20deg);
    -moz-transform: skew(20deg);

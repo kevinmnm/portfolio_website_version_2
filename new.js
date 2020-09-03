@@ -167,7 +167,7 @@ const projects = new Vue({
     components: {
         "projects-comp": {
             template: `             
-                <div class='project pop2' @mouseenter='hidee()' @mouseleave='showw()'>
+                <div class='project pop2' @touchstart='hidee()' @mouseenter='hidee()' @mouseleave='showw()'>
                 <div class='folder' v-html='folder' @click='open_project(valProp)'></div>
                 <div class='github' v-html='github' @click='open_github(valProp)'></div>
                     <div class='cover' v-if='!hide'>
@@ -434,6 +434,9 @@ window.onload = ()=>{
             'margin-left':'10px',
             'margin-right':'10px'
         });
+        $('.glower').css({
+            'display':'none'
+        });
     }
 }
 window.onresize = ()=>{
@@ -474,6 +477,9 @@ window.onresize = ()=>{
             'margin-left':'10px',
             'margin-right':'10px'
         });
+        $('.glower').css({
+         'display':'none'
+        });
     } else {
         //proj.style.width = '50%';
         sideRR.style.display = 'block';
@@ -506,6 +512,9 @@ window.onresize = ()=>{
         $('#myself').css({
             'margin-left':'80px',
             'margin-right':'80px'
+        });
+        $('.glower').css({
+         'display':'block'
         });
     }   
 }
