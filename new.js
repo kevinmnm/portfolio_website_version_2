@@ -233,7 +233,7 @@ const myself = new Vue({
         clk: true,
         whichPic: true,
         cList: ['Responsive UI/UX Designer','SEO & E-Commerce Marketing', 'Social Media Marketer', 'Bilingual: English & Korean', 'English/Korean Freelance Interpreter', 'TESOL Certified Teacher','CVS Specialty Pharmacy Agent'],
-        sList: ['HTML', '(S)CSS', 'JavaScript (Vanilla)', 'Vue.js', 'Firebase', 'jQuery', 'GIT', 'Node.js', 'Webpack', 'MySQL', 'Canva']
+        sList: ['HTML', '(S)CSS', 'JavaScript (Vanilla)', 'Vue.js', 'React.js', 'Firebase', 'jQuery', 'GIT', 'Node.js', 'NPM',  'Webpack', 'MySQL']
     },
     methods: {
         clic1: function(){
