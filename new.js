@@ -34,7 +34,16 @@ let allProjects = [
         link: 'projects/CNG/CNG.html',
         vid: 'projects/CNG/CNG.mp4',
         new: false
-    }, 
+    },
+    {
+      title: 'A Knowledge A Day',
+      desc: 'My personal learning tracker/archive. Note started on 7/1/2020. Developed for personal quick referencing guide. Developed to adhere to "learn at least one thing a day" to improve my web development skill. ',
+      category: '<i class="fa fa-lightbulb-o in-uti"></i>',
+      github: 'https://github.com/kevinmnm/a_day_a_knowledge',
+      link: 'projects/ADAK/ADAK.html',
+      vid: 'projects/ADAK/ADAK.mp4',
+      new: false
+    },
     {
         title: 'Card Match Game',
         desc: 'Fun card matching game! Play against AI and stack up your win rate. Stats are saved locally.',
@@ -42,15 +51,6 @@ let allProjects = [
         github: 'https://github.com/kevinmnm/card_game',
         link: 'projects/cardGame/cardMatch.html',
         vid: 'projects/cardGame/cardMatch.mp4',
-        new: false
-    },
-    {
-        title: 'A Knowledge A Day',
-        desc: 'My personal learning tracker/archive. Note started on 7/1/2020. Developed for personal quick referencing guide. Developed to adhere to "learn at least one thing a day" to improve my web development skill. ',
-        category: '<i class="fa fa-lightbulb-o in-uti"></i>',
-        github: 'https://github.com/kevinmnm/a_day_a_knowledge',
-        link: 'projects/ADAK/ADAK.html',
-        vid: 'projects/ADAK/ADAK.mp4',
         new: false
     },
     {
