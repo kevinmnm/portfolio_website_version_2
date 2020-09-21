@@ -17,6 +17,15 @@ let allProjects = [
       vid: 'projects/initravel/initravel.mp4',
       new: true
    },
+   {
+      title: 'GSG Website',
+      desc: 'Gaming Setup Guide website built with React CLI along with other powerful repositories. Website requires login before viewing contents. Login function is implemented with Firebase with 3rd party provider login methods. Watch the intro video or visit Github for details.',
+      category: '<i class="fa fa-window-maximize in-win"></i>',
+      github: 'https://github.com/kevinmnm/gsg-website',
+      link: 'projects/GSG/index.html',
+      vid: 'projects/GSG/GSG.mp4',
+      new: true
+   },
     {
         title: 'Website Version 1.0.0',
         desc: 'My first portfolio website. See how much I improved since this project was developed. The website you are currently viewing is verion 2. Unlike the simplicity version 2 emphasizes, this project has lots of extra contents including my story of how I got into web development and more.',
