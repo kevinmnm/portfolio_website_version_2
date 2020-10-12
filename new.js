@@ -15,7 +15,8 @@ let allProjects = [
       github: 'https://github.com/kevinmnm/ini_travel_website',
       link: 'projects/initravel/',
       vid: 'projects/initravel/initravel.mp4',
-      new: true
+      new: true,
+      developing: false
    },
    {
       title: 'GSG Website',
@@ -24,8 +25,19 @@ let allProjects = [
       github: 'https://github.com/kevinmnm/gsg-website',
       link: 'projects/GSG/index.html',
       vid: 'projects/GSG/GSG.mp4',
-      new: true
+      new: true,
+      developing: false
    },
+   {
+      title: 'A Knowledge A Day v2',
+      desc: 'My personal learning tracker/archive. Note started on 7/1/2020. Developed for personal quick referencing guide. Developed to adhere to "learn at least one thing a day" to improve my web development skill. ',
+      category: '<i class="fa fa-lightbulb-o in-uti"></i>',
+      github: 'https://github.com/kevinmnm/a_day_a_knowledge',
+      link: 'projects/ADAK/ADAK.html',
+      vid: 'projects/ADAK/ADAK.mp4',
+      new: false,
+      developing: true
+    },
     {
         title: 'Website Version 1.0.0',
         desc: 'My first portfolio website. See how much I improved since this project was developed. The website you are currently viewing is verion 2. Unlike the simplicity version 2 emphasizes, this project has lots of extra contents including my story of how I got into web development and more.',
@@ -33,7 +45,8 @@ let allProjects = [
         github: 'https://github.com/kevinmnm/portfolio_website_version_1',
         link: 'projects/websiteV1/index.html',
         vid: 'projects/websiteV1/websiteV1.mp4',
-        new: false
+        new: false,
+        developing: false
     },
     { 
         title: 'Compact Note Generator',
@@ -42,16 +55,8 @@ let allProjects = [
         github: 'https://github.com/kevinmnm/compact_note_generator',
         link: 'projects/CNG/CNG.html',
         vid: 'projects/CNG/CNG.mp4',
-        new: false
-    },
-    {
-      title: 'A Knowledge A Day',
-      desc: 'My personal learning tracker/archive. Note started on 7/1/2020. Developed for personal quick referencing guide. Developed to adhere to "learn at least one thing a day" to improve my web development skill. ',
-      category: '<i class="fa fa-lightbulb-o in-uti"></i>',
-      github: 'https://github.com/kevinmnm/a_day_a_knowledge',
-      link: 'projects/ADAK/ADAK.html',
-      vid: 'projects/ADAK/ADAK.mp4',
-      new: false
+        new: false,
+        developing: false
     },
     {
         title: 'Card Match Game',
@@ -60,7 +65,8 @@ let allProjects = [
         github: 'https://github.com/kevinmnm/card_game',
         link: 'projects/cardGame/cardMatch.html',
         vid: 'projects/cardGame/cardMatch.mp4',
-        new: false
+        new: false,
+        developing: false
     },
     {
         title: 'Sticky Notes',
@@ -69,7 +75,8 @@ let allProjects = [
         github: 'https://github.com/kevinmnm/sticky_notes',
         link: 'projects/stickyNotes/stickyNotes.html',
         vid: 'projects/stickyNotes/stickyNotes.mp4',
-        new: false
+        new: false,
+        developing: false
     },
     {
         title: 'Rock Paper Scissor Game',
@@ -78,7 +85,8 @@ let allProjects = [
         github: 'https://github.com/kevinmnm/rock_paper_scissor_game',
         link: 'projects/RPSGame/miniGame2.html',
         vid: 'projects/RPSGame/RPSGame.mp4',
-        new: false
+        new: false,
+        developing: false
     },
     {
         title: 'E-Commerce Website',
@@ -87,7 +95,8 @@ let allProjects = [
         github: 'https://github.com/kevinmnm/e_commerce_website',
         link: 'projects/e-commerce/eCommerce.html',
         vid: 'projects/e-commerce/eCommerce.mp4',
-        new: false
+        new: false,
+        developing: false
     }, 
     {
         title: 'Flash Cards Creator',
@@ -96,7 +105,8 @@ let allProjects = [
         github: 'https://github.com/kevinmnm/flash_cards',
         link: 'projects/FlashCards/flashCard.html',
         vid: 'projects/FlashCards/flashCard.mp4',
-        new: false
+        new: false,
+        developing: false
     },
     {
         title: 'Finance Book App',
@@ -105,7 +115,8 @@ let allProjects = [
         github: 'https://github.com/kevinmnm/financial_book',
         link: 'projects/financeBook/financeBook.html',
         vid: 'projects/financeBook/financeBook.mp4',
-        new: false
+        new: false,
+        developing: false
     }, 
     {
         title: 'IT Note Creator',
@@ -114,7 +125,8 @@ let allProjects = [
         github: 'https://github.com/kevinmnm/gsd_note_creator',
         link: 'projects/GSD/GSD.html',
         vid: 'projects/GSD/GSD.mp4',
-        new: false
+        new: false,
+        developing: false
     }, 
     {
         title: 'Stop Watch',
@@ -123,7 +135,8 @@ let allProjects = [
         github: 'https://github.com/kevinmnm/stop_watch',
         link: 'projects/stopWatch/timeClock.html',
         vid: 'projects/stopWatch/stopWatch.mp4',
-        new: false
+        new: false,
+        developing: false
     }, 
     {
         title: 'Fish Farm Game',
@@ -132,7 +145,8 @@ let allProjects = [
         github: 'https://github.com/kevinmnm/fish_farm_game',
         link: 'projects/fishFarmGame/miniGame3.html',
         vid: 'projects/fishFarmGame/fishFarmGame.mp4',
-        new: false
+        new: false,
+        developing: false
     }, 
     {
         title: 'Clicker Game',
@@ -141,7 +155,8 @@ let allProjects = [
         github: 'https://github.com/kevinmnm/monster_clicker_game',
         link: 'projects/clickerGame/miniGame.html',
         vid: 'projects/clickerGame/clickerGame.mp4',
-        new: false
+        new: false,
+        developing: false
     },
     {
         title: 'Furnished BV Template',
@@ -150,7 +165,8 @@ let allProjects = [
         github: 'https://github.com/kevinmnm/furnished_bv_template',
         link: 'projects/FBT/FBT.html',
         vid: 'projects/FBT/FBT.mp4',
-        new: false
+        new: false,
+        developing: false
     }
 ];
 
@@ -183,6 +199,10 @@ const projects = new Vue({
                     <div class="ribbon-wrapper" v-show='valProp.new'>
                         <div class="glow">&nbsp;</div>
 		                  <div class="ribbon-front">NEW</div>
+                     </div>
+                     <div class="ribbon-wrapper" v-show='valProp.developing'>
+                        <div class="glow-dev">&nbsp;</div>
+		                  <div class="ribbon-front-dev">Updating..</div>
 	                  </div>
                         <div class='proTitle'>
                             {{ titleProp }}
@@ -242,7 +262,7 @@ const myself = new Vue({
         clk: true,
         whichPic: true,
         cList: ['Responsive UI/UX Designer','SEO & E-Commerce Marketing', 'Social Media Marketer', 'Bilingual: English & Korean', 'English/Korean Freelance Interpreter', 'TESOL Certified Teacher','CVS Specialty Pharmacy Agent'],
-        sList: ['HTML', '(S)CSS', 'JavaScript (Vanilla)', 'Vue.js', 'React.js', 'Redux', 'Firebase', 'jQuery', 'GIT', 'Node.js', 'NPM',  'Webpack', 'MySQL']
+        sList: ['HTML', '(S)CSS', 'JavaScript (Vanilla)', 'Vue.js', 'Vuetify', 'React.js', 'Redux', 'Firebase', 'jQuery', 'GIT', 'Node.js', 'MongoDB', 'NPM',  'Webpack', 'MySQL']
     },
     methods: {
         clic1: function(){

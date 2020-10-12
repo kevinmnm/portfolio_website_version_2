@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="src/ribbon.css">
+<link rel="stylesheet" href="src/ribbon_dev.css">
 <link rel="stylesheet" href="src/glow-horizon.css">
 <link rel="stylesheet" href="new.css">
 
@@ -112,6 +113,7 @@
         <div class='list-icon'>
             <div class='floatL' v-html='all.category'></div>
             <div class='new-content' v-show='all.new'>NEW</div>
+            <div class='dev-content' v-show='all.developing'>Updating..</div>
             <a :href='all.link' target='_blank' class='floatR fa fa-eye'></a> 
             <a :href='all.github' target='_blank' class='floatR fa fa-github' style='margin-right: 15px;'></a>
         </div>
