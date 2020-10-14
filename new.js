@@ -283,38 +283,39 @@ const myself = new Vue({
     }
 });
 
-// Detect browser type.
+// // Detect browser type.
 
-   // Opera 8.0+
-   var isOpera = (!!window.opr && !!opr.addons) || !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
+//    // Opera 8.0+
+//    var isOpera = (!!window.opr && !!opr.addons) || !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
 
-   // Firefox 1.0+
-   var isFirefox = typeof InstallTrigger !== 'undefined';
+//    // Firefox 1.0+
+//    var isFirefox = typeof InstallTrigger !== 'undefined';
 
-   // Safari 3.0+ "[object HTMLElementConstructor]" 
-   var isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || (typeof safari !== 'undefined' && safari.pushNotification));
+//    // Safari 3.0+ "[object HTMLElementConstructor]" 
+//    var isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || (typeof safari !== 'undefined' && safari.pushNotification));
 
-   // Internet Explorer 6-11
-   var isIE = /*@cc_on!@*/false || !!document.documentMode;
+//    // Internet Explorer 6-11
+//    var isIE = /*@cc_on!@*/false || !!document.documentMode;
 
-   // Edge 20+
-   var isEdge = !isIE && !!window.StyleMedia;
+//    // Edge 20+
+//    var isEdge = !isIE && !!window.StyleMedia;
 
-   // Chrome 1 - 79
-   var isChrome = !!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime);
+//    // Chrome 1 - 79
+//    var isChrome = !!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime);
 
-   // Edge (based on chromium) detection
-   var isEdgeChromium = isChrome && (navigator.userAgent.indexOf("Edg") != -1);
+//    // Edge (based on chromium) detection
+//    var isEdgeChromium = isChrome && (navigator.userAgent.indexOf("Edg") != -1);
 
-   // Blink engine detection
-   var isBlink = (isChrome || isOpera) && !!window.CSS;
+//    // Blink engine detection
+//    var isBlink = (isChrome || isOpera) && !!window.CSS;
 
-   let marq = document.querySelector('#marq');
+//    let marq = document.querySelector('#marq');
 
 const sideR = new Vue({
     el: '#sideR',
     data: {
-        text: 'kevinmnm2010@gmail.com'
+        text: 'kevinmnm2010@gmail.com',
+        chrome: null
     },
     methods: {
         stopi: function(){
@@ -322,11 +323,48 @@ const sideR = new Vue({
         },
         starti: function(){
             document.querySelector('#marq').start();
-        }
+        },
+        shutdown(){
+            let destroy = document.querySelectorAll('.destroy');
+            window.scrollTo(0,0);
+            document.body.style.overflow = 'hidden';
+            document.querySelector('#cover_up').style.display = 'block';
+            document.querySelector('.destroy_fill').classList.add('destroy_fill_animation');
+         
+            document.querySelector('.destroy_fill_animation').addEventListener('animationend',()=> {
+               document.body.style.overflow = 'hidden';
+               document.querySelector('.destroy_wrap').style.display = 'none';
+               document.querySelector('#cover_up').style.opacity = '0.1';
+               
+               let timer = 0;
+            
+               for (let i=0; i<destroy.length; i++){
+                  setTimeout( ()=>{
+                     destroy[i].className = '';
+                     destroy[i].classList.add('animate__hinge','animate__animated');
+                  },timer);
+
+                  timer += 350;
+               }
+            });
+            
+            destroy[destroy.length - 1].addEventListener('animationend',()=>{
+               window.location.reload();
+            });
+         }
+         
     },
     mounted(){
-      if (!isChrome){
-         this.text = '';
+      if (navigator.userAgent.indexOf('Chrome') > 0){
+         this.chrome = true;
+         if (window.innerWidth >= 600){
+            console.warn("You are using Chrome browser.\n Try different browser for different sidebar animation!");
+         }
+      } else {
+         this.chrome = false;
+         if (window.innerWidth >= 600){
+            console.warn("You are not using Chrome browser.\n Try Chrome for different sidebar animation!");
+         }
       }
     }
 });
@@ -349,6 +387,7 @@ const aboutMe = new Vue({
             let nnn = document.querySelector('.sky_blue');
             let bbb = document.querySelector('.chocolate');
             let marq = document.querySelector('#marq');
+            let shutdown = document.querySelector('#shutdown');
             window.scroll(0,0);
             document.body.style.overflow = 'hidden';
             marq.stop();
@@ -400,8 +439,15 @@ const aboutMe = new Vue({
                         },time);
                         time += 100;
                     }
-                    marq.style.display = 'block';
-                    marq.start();
+                    if (navigator.userAgent.indexOf('Chrome') > 0){
+                     marq.style.display = 'block';
+                     marq.start();
+                    } else {
+                     setTimeout(()=>{
+                        shutdown.style.display = 'block';
+                        shutdown.classList.add('animate__bounceInRight');
+                     },1000);
+                    }
                     this.$el.classList.remove('about-me-effect');
                     //$('.about-me-effect').animate({'background-color':'rgba(21, 22, 27, 0.3)'});
                     document.querySelector('#desc').style.visibility = 'visible';
@@ -439,9 +485,12 @@ let email = document.querySelectorAll('.email');
 
 //Buttons onclick event listeners
 logo_wrap.addEventListener('click',function(){
-    window.scroll(0,0);
-    //window.scrollTo({top:0});
-    location.reload();
+   if (navigator.userAgent.indexOf('Chrome') > 0){
+      sideR.$options.methods.shutdown();
+   } else {
+      window.scroll(0,0);
+      location.reload();
+   }
 });
 logo_wrap.addEventListener('mouseenter',function(){
     logo.classList.remove('animate__flipInY');
