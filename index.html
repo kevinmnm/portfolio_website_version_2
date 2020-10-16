@@ -92,25 +92,31 @@
    <div class='amTitle pop'>About Me</div>
    <div id='myself'>
       <div class='pp pop2' @contextmenu="disable_right_click($event)">
-         <img class='profile' src='img/pp.png' alt='Profile Picture1' v-show='whichPic === 1' draggable='false' />
-         <img class='profile' src='img/pp2.png' alt='Profile Picture2' v-show='whichPic === 2' draggable='false' />
-         <img class='profile' src='img/pp3.png' alt='Profile Picture3' v-show='whichPic === 3' draggable='false' />
+
+         <transition-group name="carousel" mode="in-out">
+            <img class='profile animate__animated' src='img/pp.png' alt='Profile Picture1' v-show='whichPic === 1'
+               draggable='false' :key="1" />
+            <img class='profile animate__animated' src='img/pp2.png' alt='Profile Picture2' v-show='whichPic === 2'
+               draggable='false' :key="2" />
+            <img class='profile animate__animated' src='img/pp3.png' alt='Profile Picture3' v-show='whichPic === 3'
+               draggable='false' :key="3" />
+         </transition-group>
+
          <div class="carousel-arrows" @mouseenter="show_pic()" @mouseleave="hide_pic()">
             <div 
-               class="arrow-left animate__animated" 
-               :class="{'animate__bounceIn': shower_left, 'animate__bounceOut': hider_left}"
-               @click="profile_prev()"
-            >
+               v-show="show_arrowL"
+               class="arrow-left animate__animated"
+               :class="{'animate__bounceIn': shower_left_ani, 'animate__bounceOut': hider_left_ani}" @click="profile_prev()">
                &lt;
             </div>
             <div 
+               v-show="show_arrowR"
                class="arrow-right animate__animated"
-               :class="{'animate__bounceIn': shower_right, 'animate__bounceOut': hider_right}"
-               @click="profile_next()"
-            >
+               :class="{'animate__bounceIn': shower_right_ani, 'animate__bounceOut': hider_right_ani}" @click="profile_next()">
                &gt;
             </div>
          </div>
+
       </div>
       <div class='who pop2'>
          <div class='choose'>
@@ -157,7 +163,7 @@
          <div class='list-title'>
             <span>{{all.title}}</span>
          </div>
-         <p class='list-desc'>{{all.desc}}</p> <br/>
+         <p class='list-desc'>{{all.desc}}</p> <br />
          <div class='new-content' v-show='all.new'>NEW</div>
          <div class='dev-content' v-show='all.developing'>UPDATING..</div>
       </div>

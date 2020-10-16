@@ -261,10 +261,12 @@ const myself = new Vue({
    data: {
       clk: true,
       whichPic: 1,
-      shower_left: false,
-      shower_right: false,
-      hider_left: true,
-      hider_right: true,
+      shower_left_ani: false,
+      shower_right_ani: false,
+      hider_left_ani: true,
+      hider_right_ani: true,
+      show_arrowL: false,
+      show_arrowR: false,
       cList: ['Responsive UI/UX Designer', 'SEO & E-Commerce Marketing', 'Social Media Marketer', 'Bilingual: English & Korean', 'English/Korean Freelance Interpreter', 'TESOL Certified Teacher', 'CVS Specialty Pharmacy Agent'],
       sList: ['HTML', '(S)CSS', 'JavaScript (Vanilla)', 'Vue.js', 'Vuetify', 'React.js', 'Redux', 'Firebase', 'jQuery', 'GIT', 'Node.js', 'MongoDB', 'NPM', 'Webpack', 'MySQL']
    },
@@ -285,33 +287,50 @@ const myself = new Vue({
          this.whichPic = true;
       },
       show_pic() {
+         this.show_arrowL = true;
+         this.show_arrowR = true;
          setTimeout(()=>{
-            if (this.hider_left){this.hider_left = false;}
-            this.shower_left = true;
+            if (this.hider_left_ani){this.hider_left_ani = false;}
+            this.shower_left_ani = true;
             setTimeout(()=>{
-               if (this.hider_right){this.hider_right = false;}
-               this.shower_right = true;
+               if (this.hider_right_ani){this.hider_right_ani = false;}
+               this.shower_right_ani = true;
             },200);
          },400);
          document.querySelectorAll('.profile').forEach(profile => profile.style.opacity = '1');
       },
       hide_pic() {
-         if (this.shower_right){this.shower_right = false;}
-         this.hider_right = true;
-         setTimeout(()=>{
-            if (this.shower_left){this.shower_left = false;}
-            this.hider_left = true;
-         },200);
+         // Hide arrow animation.
+         // if (this.shower_right){this.shower_right = false;}
+         // this.hider_right = true;
+         // setTimeout(()=>{
+         //    if (this.shower_left){this.shower_left = false;}
+         //    this.hider_left = true;
+         // },200);
+
+         this.show_arrowL = false;
+         this.show_arrowR = false;
+
          document.querySelectorAll('.profile').forEach(profile => profile.style.opacity = '0.5');
       },
       profile_prev(){
+         this.arrow_temp_hide();
          (this.whichPic === 1) ? this.whichPic = 3 : this.whichPic--;
       },
       profile_next(){
+         this.arrow_temp_hide();
          (this.whichPic === 3) ? this.whichPic = 1 : this.whichPic++;
       },
       disable_right_click(e){
          e.preventDefault();
+      },
+      arrow_temp_hide(){
+         this.show_arrowL = false;
+         this.show_arrowR = false;
+         setTimeout( () => {
+            this.show_arrowL = true;
+            this.show_arrowR = true;
+         }, 500);
       }
    }
 });

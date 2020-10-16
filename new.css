@@ -533,6 +533,7 @@
       align-items: center;
       justify-content: space-between;
       padding: 10px;
+      z-index: 2;
   }
 
   .arrow-left,
@@ -980,3 +981,21 @@
    -moz-osx-font-smoothing: grayscale;
    text-rendering: optimizeLegibility;
 } 
+
+
+/* Vue transtion-group */
+.carousel-enter-active{
+   transition: all 0.5s;
+   position: relative;
+}
+
+.carousel-leave-active{
+   transition: all 0.5s;
+   position: absolute;
+}
+
+.carousel-leave-to {
+   opacity: 0;
+   transform: scale(0);
+   z-index: 1;
+}
