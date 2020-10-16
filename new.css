@@ -520,6 +520,36 @@
           border-radius: 10px;
       }
   }
+
+  .carousel-arrows{
+      position: absolute;
+      box-sizing: border-box;
+      width: 100%;
+      display: flex;
+      height: 100%;
+      top: 0;
+      font-size: 45px;
+      font-weight: 900;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px;
+  }
+
+  .arrow-left,
+  .arrow-right{
+      cursor: pointer;
+      color: rgb(100,255,218);
+      opacity: 0.5;
+      transition: opacity 0.5s;
+  }
+
+  .arrow-left:hover,
+  .arrow-right:hover{
+      color: yellowGreen;
+      opacity: 1 !important;
+      text-shadow: 0 0 2px black;
+  }
+
   li{
       list-style-type: none;
   }
@@ -654,7 +684,7 @@
       float: left;
       top: 0;
       margin-top: -2px;
-      opacity: 0.4;
+      opacity: 0.8;
   }
   
   @media only screen and (max-width: 600px) {
@@ -819,6 +849,7 @@
       margin: 10px;
       margin-top: 5px;
       margin-bottom: 5px;
+      text-shadow: 0 0 1px grey;
   }
   .custom-title{
       position: absolute;
@@ -924,10 +955,11 @@
    position: absolute;
    font-size: 16px;
    color: greenYellow;
-   width: 50px;
+   bottom: 10px;
    font-weight: bold;
-   left: calc(50% - 25px);
-   top: 15px;
+   user-select: none;
+   cursor: default;
+   text-shadow: 0 0 1px black;
 
    -webkit-font-smoothing: antialiased;
    -moz-osx-font-smoothing: grayscale;
@@ -937,27 +969,14 @@
 .dev-content{
    position: absolute;
    font-size: 16px;
-   color: rgb(39, 120, 207);
-   width: 50px;
+   color: rgb(60, 154, 255);
    font-weight: bold;
-   left: calc(50% - 25px);
-   top: 15px;
+   bottom: 10px;
+   user-select: none;
+   cursor: default;
+   text-shadow: 0 0 1px black;
 
    -webkit-font-smoothing: antialiased;
    -moz-osx-font-smoothing: grayscale;
    text-rendering: optimizeLegibility;
 } 
-
-.dev-content{
-   position: absolute;
-   font-size: 16px;
-   color: rgb(39, 120, 207);
-   width: 50px;
-   font-weight: bold;
-   left: calc(50% - 25px);
-   top: 15px;
-
-   -webkit-font-smoothing: antialiased;
-   -moz-osx-font-smoothing: grayscale;
-   text-rendering: optimizeLegibility;
-}

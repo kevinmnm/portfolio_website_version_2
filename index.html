@@ -1,30 +1,32 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>Web Design</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="src/ribbon.css">
-<link rel="stylesheet" href="src/ribbon_dev.css">
-<link rel="stylesheet" href="src/glow-horizon.css">
-<link rel="stylesheet" href="new.css">
+   <title>Web Design</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link rel="stylesheet" href="src/ribbon.css">
+   <link rel="stylesheet" href="src/ribbon_dev.css">
+   <link rel="stylesheet" href="src/glow-horizon.css">
+   <link rel="stylesheet" href="new.css">
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-148978337-2"></script>
-  <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+   <!-- Global site tag (gtag.js) - Google Analytics -->
+   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-148978337-2"></script>
+   <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
 
-  gtag('config', 'UA-148978337-2');
-  </script>
+      gtag('config', 'UA-148978337-2');
+   </script>
 
 </head>
+
 <body>
    <div id="cover_up">
       <div class='destroy_wrap'>
@@ -35,124 +37,154 @@
       </div>
    </div>
 
-    <div class='custom-title'></div>
-<div id='navBar' class='destroy'>
-    <span class='nav-menu animate__animated'>Main</span>
-    <span class='nav-menu animate__animated'>About</span>
-    <span class='nav-menu animate__animated'>Projects</span>
-    <span class='nav-menu animate__animated'>Contact</span>
-</div>
-<div id='sideL' class='sider-left destroy'>
-   <div class='glower'></div>
-    <div class='logo-wrap'>
-         <div id='logo'>K</div>
-    </div>
-    <div class='social-media'>
-        <a href='https://www.facebook.com/kevin.song.790/' target='_blank' class='fa fas fa-facebook animate__animated'></a>
-        <a href='https://www.linkedin.com/in/kevin-song-b67138169/' target='_blank' class='fa fas fa-linkedin animate__animated'></a>
-        <a href='https://codepen.io/kevinmnm' target='_blank' class='fa fas fa-codepen animate__animated'></a>
-        <a href='https://www.instagram.com/kevinmnm/?hl=en' target='_blank' class='fa fas fa-instagram animate__animated'></a>
-        <a href='https://github.com/kevinmnm' target='_blank' class='fa fas fa-github animate__animated'></a>
-    </div>
-</div>
-<div id='sideR' class='sider-right destroy' :class="{'email': chrome}">
-   <div class='glower'></div>
-    <marquee v-show="chrome" id='marq' @mouseenter='stopi()' @mouseleave='starti()' direction='down' width='100%' height='100%'>{{text}}</marquee>
-    <div id="shutdown" class="animate__animated" @click.stop="shutdown()">
-       <svg id="shutdown_svg" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="power-off" class="svg-inline--fa fa-power-off fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M400 54.1c63 45 104 118.6 104 201.9 0 136.8-110.8 247.7-247.5 248C120 504.3 8.2 393 8 256.4 7.9 173.1 48.9 99.3 111.8 54.2c11.7-8.3 28-4.8 35 7.7L162.6 90c5.9 10.5 3.1 23.8-6.6 31-41.5 30.8-68 79.6-68 134.9-.1 92.3 74.5 168.1 168 168.1 91.6 0 168.6-74.2 168-169.1-.3-51.8-24.7-101.8-68.1-134-9.7-7.2-12.4-20.5-6.5-30.9l15.8-28.1c7-12.4 23.2-16.1 34.8-7.8zM296 264V24c0-13.3-10.7-24-24-24h-32c-13.3 0-24 10.7-24 24v240c0 13.3 10.7 24 24 24h32c13.3 0 24-10.7 24-24z"></path></svg>
+   <div class='custom-title'></div>
+   <div id='navBar' class='destroy'>
+      <span class='nav-menu animate__animated'>Main</span>
+      <span class='nav-menu animate__animated'>About</span>
+      <span class='nav-menu animate__animated'>Projects</span>
+      <span class='nav-menu animate__animated'>Contact</span>
    </div>
-    <div class='domain-name'></div>
-</div>
+   <div id='sideL' class='sider-left destroy'>
+      <div class='glower'></div>
+      <div class='logo-wrap'>
+         <div id='logo'>K</div>
+      </div>
+      <div class='social-media'>
+         <a href='https://www.facebook.com/kevin.song.790/' target='_blank'
+            class='fa fas fa-facebook animate__animated'></a>
+         <a href='https://www.linkedin.com/in/kevin-song-b67138169/' target='_blank'
+            class='fa fas fa-linkedin animate__animated'></a>
+         <a href='https://codepen.io/kevinmnm' target='_blank' class='fa fas fa-codepen animate__animated'></a>
+         <a href='https://www.instagram.com/kevinmnm/?hl=en' target='_blank'
+            class='fa fas fa-instagram animate__animated'></a>
+         <a href='https://github.com/kevinmnm' target='_blank' class='fa fas fa-github animate__animated'></a>
+      </div>
+   </div>
+   <div id='sideR' class='sider-right destroy' :class="{'email': chrome}">
+      <div class='glower'></div>
+      <marquee v-show="chrome" id='marq' @mouseenter='stopi()' @mouseleave='starti()' direction='down' width='100%'
+         height='100%'>{{text}}</marquee>
+      <div id="shutdown" class="animate__animated" @click.stop="shutdown()">
+         <svg id="shutdown_svg" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="power-off"
+            class="svg-inline--fa fa-power-off fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 512 512">
+            <path fill="currentColor"
+               d="M400 54.1c63 45 104 118.6 104 201.9 0 136.8-110.8 247.7-247.5 248C120 504.3 8.2 393 8 256.4 7.9 173.1 48.9 99.3 111.8 54.2c11.7-8.3 28-4.8 35 7.7L162.6 90c5.9 10.5 3.1 23.8-6.6 31-41.5 30.8-68 79.6-68 134.9-.1 92.3 74.5 168.1 168 168.1 91.6 0 168.6-74.2 168-169.1-.3-51.8-24.7-101.8-68.1-134-9.7-7.2-12.4-20.5-6.5-30.9l15.8-28.1c7-12.4 23.2-16.1 34.8-7.8zM296 264V24c0-13.3-10.7-24-24-24h-32c-13.3 0-24 10.7-24 24v240c0 13.3 10.7 24 24 24h32c13.3 0 24-10.7 24-24z">
+            </path>
+         </svg>
+      </div>
+      <div class='domain-name'></div>
+   </div>
 
-<p class='intro destroy'>Hi, my name is <b>Kevin</b>.</p>
-<div id='about-me' class='about about-me-effect destroy' v-html='title' v-bind:class='{animate__bounce: ended, animate__animated: ended}'>
-</div>
-<br>
-<div id='expla' class='destroy'>
-        <div id='desc' class='animate__animated'>
-            I'm a Front-End Web Developer located in Maryland. I'm open for relocation, full/part-time, and most preferably, <b>remote</b> work opportunities.
-        </div>
-    <div id='resume' class='animate__animated'>Resume</div>
-</div>
+   <p class='intro destroy'>Hi, my name is <b>Kevin</b>.</p>
+   <div id='about-me' class='about about-me-effect destroy' v-html='title'
+      v-bind:class='{animate__bounce: ended, animate__animated: ended}'>
+   </div>
+   <br>
+   <div id='expla' class='destroy'>
+      <div id='desc' class='animate__animated'>
+         I'm a Front-End Web Developer located in Maryland. I'm open for relocation, full/part-time, and most
+         preferably, <b>remote</b> work opportunities.
+      </div>
+      <div id='resume' class='animate__animated'>Resume</div>
+   </div>
 
-<div class='amTitle pop'>About Me</div>
-<div id='myself'>
-    <div class='pp pop2'>
-        <img class='profile' src='img/pp.png' alt='Profile Picture' v-show='whichPic' draggable='false'/>
-    </div>
-    <div class='who pop2'>
-        <div class='choose'>
+   <div class='amTitle pop'>About Me</div>
+   <div id='myself'>
+      <div class='pp pop2' @contextmenu="disable_right_click($event)">
+         <img class='profile' src='img/pp.png' alt='Profile Picture1' v-show='whichPic === 1' draggable='false' />
+         <img class='profile' src='img/pp2.png' alt='Profile Picture2' v-show='whichPic === 2' draggable='false' />
+         <img class='profile' src='img/pp3.png' alt='Profile Picture3' v-show='whichPic === 3' draggable='false' />
+         <div class="carousel-arrows" @mouseenter="show_pic()" @mouseleave="hide_pic()">
+            <div 
+               class="arrow-left animate__animated" 
+               :class="{'animate__bounceIn': shower_left, 'animate__bounceOut': hider_left}"
+               @click="profile_prev()"
+            >
+               &lt;
+            </div>
+            <div 
+               class="arrow-right animate__animated"
+               :class="{'animate__bounceIn': shower_right, 'animate__bounceOut': hider_right}"
+               @click="profile_next()"
+            >
+               &gt;
+            </div>
+         </div>
+      </div>
+      <div class='who pop2'>
+         <div class='choose'>
             <span class='choice' v-bind:class="{'opaci': !clk}" @click='clic1()'>Skills</span>
             <span class='choice' v-bind:class="{'opaci': clk}" @click='clic2()'>Others</span>
-        </div>
-        <ul v-show='clk'>
+         </div>
+         <ul v-show='clk'>
             <li v-for='lis in sList'>{{lis}}</li>
-        </ul>
-        <ul v-show='!clk' >
+         </ul>
+         <ul v-show='!clk'>
             <li v-for='lis in cList'>{{lis}}</li>
-        </ul>
-    </div>
-</div>
+         </ul>
+      </div>
+   </div>
 
-<div class='amTitle pop'>Projects</div>
-<div class='icon-wrap'>
-    <i id='blockList' class="fa fa-th-large" aria-hidden="true"></i>
-    <i id='rendList' class="fa fa-list opaci" aria-hidden="true"></i>
-</div>
+   <div class='amTitle pop'>Projects</div>
+   <div class='icon-wrap'>
+      <i id='blockList' class="fa fa-th-large" aria-hidden="true"></i>
+      <i id='rendList' class="fa fa-list opaci" aria-hidden="true"></i>
+   </div>
 
-<div id='sortBy'>
-    <i id='utility' class="fa fa-lightbulb-o sort"></i>
-    <i id='website' class="fa fa-window-maximize sort"></i>
-    <i id='game' class="fa fa-gamepad sort"></i>
-</div>
+   <div id='sortBy'>
+      <i id='utility' class="fa fa-lightbulb-o sort"></i>
+      <i id='website' class="fa fa-window-maximize sort"></i>
+      <i id='game' class="fa fa-gamepad sort"></i>
+   </div>
 
-<div id='projects'>
-    
-    <projects-comp 
-    v-for='(all,ind) in allP' 
-    :title-prop='all.title' 
-    :desc-prop='all.desc' 
-    :vid-prop='all.vid' 
-    :val-prop='all' 
-    :key='all + ind'>
-        
-    </projects-comp>
+   <div id='projects'>
 
-</div>
+      <projects-comp v-for='(all,ind) in allP' :title-prop='all.title' :desc-prop='all.desc' :vid-prop='all.vid'
+         :val-prop='all' :key='all + ind'>
 
-<div id='projects-list'>
-    <div class='list-all' v-for='all in allProj'>
-        <div class='list-icon'>
+      </projects-comp>
+
+   </div>
+
+   <div id='projects-list'>
+      <div class='list-all' v-for='all in allProj'>
+         <div class='list-icon'>
             <div class='floatL' v-html='all.category'></div>
-            <div class='new-content' v-show='all.new'>NEW</div>
-            <div class='dev-content' v-show='all.developing'>UPDATING</div>
-            <a :href='all.link' target='_blank' class='floatR fa fa-eye'></a> 
+            <a :href='all.link' target='_blank' class='floatR fa fa-eye'></a>
             <a :href='all.github' target='_blank' class='floatR fa fa-github' style='margin-right: 15px;'></a>
-        </div>
-        <div class='list-title'>
+         </div>
+         <div class='list-title'>
             <span>{{all.title}}</span>
-        </div>
-        <p class='list-desc'>{{all.desc}}</p>
-    </div>
-</div>
+         </div>
+         <p class='list-desc'>{{all.desc}}</p> <br/>
+         <div class='new-content' v-show='all.new'>NEW</div>
+         <div class='dev-content' v-show='all.developing'>UPDATING..</div>
+      </div>
+   </div>
 
-<div class='amTitle pop'>Contacts</div>
-<div id='emailMe' class='pop email'>Email Me!</div><br><br><br>
+   <div class='amTitle pop'>Contacts</div>
+   <div id='emailMe' class='pop email'>Email Me!</div><br><br><br>
 
-<div id='credit' class='pop'>
-    <code onclick="window.open('https://github.com/kevinmnm/portfolio_website_version_2')">Designed & Built by Kevin Song</code>
-</div>
+   <div id='credit' class='pop'>
+      <code
+         onclick="window.open('https://github.com/kevinmnm/portfolio_website_version_2')">Designed & Built by Kevin Song</code>
+   </div>
 
-<br><br><br>
+   <br><br><br>
 
-<div class='social-media-bottom'>
-    <a href='https://www.facebook.com/kevin.song.790/' target='_blank' class='fa fas fa-facebook animate__animated'></a>
-    <a href='https://www.linkedin.com/in/kevin-song-b67138169/' target='_blank' class='fa fas fa-linkedin animate__animated'></a>
-    <a href='https://codepen.io/kevinmnm' target='_blank' class='fa fas fa-codepen animate__animated'></a>
-    <a href='https://www.instagram.com/kevinmnm/?hl=en' target='_blank' class='fa fas fa-instagram animate__animated'></a>
-    <a href='https://github.com/kevinmnm' target='_blank' class='fa fas fa-github animate__animated'></a>
-</div>
+   <div class='social-media-bottom'>
+      <a href='https://www.facebook.com/kevin.song.790/' target='_blank'
+         class='fa fas fa-facebook animate__animated'></a>
+      <a href='https://www.linkedin.com/in/kevin-song-b67138169/' target='_blank'
+         class='fa fas fa-linkedin animate__animated'></a>
+      <a href='https://codepen.io/kevinmnm' target='_blank' class='fa fas fa-codepen animate__animated'></a>
+      <a href='https://www.instagram.com/kevinmnm/?hl=en' target='_blank'
+         class='fa fas fa-instagram animate__animated'></a>
+      <a href='https://github.com/kevinmnm' target='_blank' class='fa fas fa-github animate__animated'></a>
+   </div>
 
-<script src='new.js' type='module'></script>
+   <script src='new.js' type='module'></script>
 </body>
+
 </html>
