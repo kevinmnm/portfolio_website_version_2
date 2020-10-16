@@ -839,6 +839,7 @@ function isInViewport(el) {
    );
 }
 //Project width & height setup
+/**
 document.addEventListener('scroll', () => {
    let popList = document.querySelectorAll('.pop');
    let popList2 = document.querySelectorAll('.pop2');
@@ -863,6 +864,32 @@ document.addEventListener('scroll', () => {
 }, {
    passive: true
 });
+**/
+
+let popList = document.querySelectorAll('.pop');
+let popList2 = document.querySelectorAll('.pop2');
+
+let observer = new IntersectionObserver( entries => {
+   entries.forEach( entry => {
+      if (entry.isIntersecting){
+         entry.target.style.visibility = 'visible';
+         if (entry.target.classList.contains('pop')){
+            return entry.target.classList.add('animate__animated', 'animate__flipInX');
+         }
+         entry.target.classList.add('animate__animated', 'animate__fadeInUp');
+      }
+   });
+});
+
+popList.forEach( el => {
+   observer.observe(el);
+});
+
+popList2.forEach( el => {
+   observer.observe(el);
+});
+
+
 
 //Click resume to open resume.
 document.querySelector('#resume').addEventListener('click', function () {
