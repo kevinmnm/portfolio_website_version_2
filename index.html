@@ -93,13 +93,13 @@
    <div id='myself'>
       <div class='pp pop2' @contextmenu="disable_right_click($event)">
 
-         <transition-group name="carousel" mode="in-out">
+         <transition-group name="carousel">
             <img class='profile animate__animated' src='img/pp.png' alt='Profile Picture1' v-show='whichPic === 1'
-               draggable='false' :key="1" />
+               draggable='false' :key="11" />
             <img class='profile animate__animated' src='img/pp2.png' alt='Profile Picture2' v-show='whichPic === 2'
-               draggable='false' :key="2" />
+               draggable='false' :key="22" />
             <img class='profile animate__animated' src='img/pp3.png' alt='Profile Picture3' v-show='whichPic === 3'
-               draggable='false' :key="3" />
+               draggable='false' :key="33" />
          </transition-group>
 
          <div class="carousel-arrows" @mouseenter="show_pic()" @mouseleave="hide_pic()">

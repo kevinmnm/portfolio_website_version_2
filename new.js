@@ -23,7 +23,7 @@ let allProjects = [
       desc: 'Gaming Setup Guide website built with React CLI along with other powerful repositories. Website requires login before viewing contents. Login function is implemented with Firebase with 3rd party provider login methods. Watch the intro video or visit Github for details.',
       category: '<i class="fa fa-window-maximize in-win"></i>',
       github: 'https://github.com/kevinmnm/gsg-website',
-      link: 'projects/GSG/index.html',
+      link: 'projects/GSG/',
       vid: 'projects/GSG/GSG.mp4',
       new: false,
       developing: true
@@ -330,7 +330,7 @@ const myself = new Vue({
          setTimeout( () => {
             this.show_arrowL = true;
             this.show_arrowR = true;
-         }, 500);
+         }, 700);
       }
    }
 });
@@ -898,7 +898,7 @@ let observer = new IntersectionObserver( entries => {
          entry.target.classList.add('animate__animated', 'animate__fadeInUp');
       }
    });
-});
+}, {threshold: 0.3});
 
 popList.forEach( el => {
    observer.observe(el);

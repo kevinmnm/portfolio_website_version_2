@@ -278,7 +278,6 @@
       background: rgb(40, 44, 52);
       padding: 10px;
       border-radius: 10px;
-      box-shadow: 0 0 5px red;
   }
   
   .destroy_bar{
@@ -993,8 +992,11 @@
    transition: all 0.5s;
    position: absolute;
 }
-
+.carousel-enter{
+   transform: scale(1);
+}
 .carousel-leave-to {
+   position: absolute;
    opacity: 0;
    transform: scale(0);
    z-index: 1;
