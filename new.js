@@ -19,16 +19,6 @@ let allProjects = [
       developing: false
    },
    {
-      title: 'GSG Website',
-      desc: 'Gaming Setup Guide website built with React CLI along with other powerful repositories. Website requires login before viewing contents. Login function is implemented with Firebase with 3rd party provider login methods. Watch the intro video or visit Github for details.',
-      category: '<i class="fa fa-window-maximize in-win"></i>',
-      github: 'https://github.com/kevinmnm/gsg-website',
-      link: 'projects/GSG/',
-      vid: 'projects/GSG/GSG.mp4',
-      new: false,
-      developing: true
-   },
-   {
       title: 'A Knowledge A Day v2',
       desc: 'My personal learning tracker/archive. Note started on 7/1/2020. Developed for personal quick referencing guide. Developed to adhere to "learn at least one thing a day" to improve my web development skill. ',
       category: '<i class="fa fa-lightbulb-o in-uti"></i>',
@@ -37,6 +27,16 @@ let allProjects = [
       vid: 'projects/ADAK/ADAK.mp4',
       new: false,
       developing: true
+   },
+   {
+      title: 'GSG Website',
+      desc: 'Gaming Setup Guide website built with React CLI along with other powerful repositories. Website requires login before viewing contents. Login function is implemented with Firebase with 3rd party provider login methods. Watch the intro video or visit Github for details.',
+      category: '<i class="fa fa-window-maximize in-win"></i>',
+      github: 'https://github.com/kevinmnm/gsg-website',
+      link: 'projects/GSG/',
+      vid: 'projects/GSG/GSG.mp4',
+      new: false,
+      developing: false
    },
    {
       title: 'Website Version 1.0.0',
