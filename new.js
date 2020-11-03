@@ -9,25 +9,35 @@ let pp = document.querySelector('.pp');
 let navItem = document.querySelectorAll('.nav-menu');
 let allProjects = [
    {
+      title: 'Note Archive (ADAK-V3)',
+      desc: 'This is a full-stack application built with Vue.js. Backend is connected via REST API with emplemented authentication using JWT (JSON Web Token).',
+      category: '<i class="fa fa-window-maximize in-win"></i>',
+      github: 'https://github.com/kevinmnm/akad-v3',
+      link: 'https://adak.herokuapp.com/',
+      vid: '',
+      new: true,
+      developing: false
+   },
+   {
       title: 'IniTravel Website',
       desc: 'Indonesia Travel Guide website built with Vue CLI plus other useful repositories. This project is also integrated with Google Firebase to manipulate basic server side tasks including storage system and user registeration management. Watch the video or visit Github to see details.',
       category: '<i class="fa fa-window-maximize in-win"></i>',
       github: 'https://github.com/kevinmnm/ini_travel_website',
       link: 'projects/initravel/',
       vid: 'projects/initravel/initravel.mp4',
-      new: true,
+      new: false,
       developing: false
    },
-   {
-      title: 'A Knowledge A Day v2',
-      desc: 'My personal learning tracker/archive. Note started on 7/1/2020. Developed for personal quick referencing guide. Developed to adhere to "learn at least one thing a day" to improve my web development skill. ',
-      category: '<i class="fa fa-lightbulb-o in-uti"></i>',
-      github: 'https://github.com/kevinmnm/a_day_a_knowledge',
-      link: 'projects/ADAK/ADAK.html',
-      vid: 'projects/ADAK/ADAK.mp4',
-      new: false,
-      developing: true
-   },
+   // {
+   //    title: 'A Knowledge A Day v2',
+   //    desc: 'My personal learning tracker/archive. Note started on 7/1/2020. Developed for personal quick referencing guide. Developed to adhere to "learn at least one thing a day" to improve my web development skill. ',
+   //    category: '<i class="fa fa-lightbulb-o in-uti"></i>',
+   //    github: 'https://github.com/kevinmnm/a_day_a_knowledge',
+   //    link: 'projects/ADAK/ADAK.html',
+   //    vid: 'projects/ADAK/ADAK.mp4',
+   //    new: false,
+   //    developing: true
+   // },
    {
       title: 'GSG Website',
       desc: 'Gaming Setup Guide website built with React CLI along with other powerful repositories. Website requires login before viewing contents. Login function is implemented with Firebase with 3rd party provider login methods. Watch the intro video or visit Github for details.',
