@@ -9,12 +9,22 @@ let pp = document.querySelector('.pp');
 let navItem = document.querySelectorAll('.nav-menu');
 let allProjects = [
    {
+      title: 'Compact Note Generator',
+      desc: 'CVS Specialty Pharmacy note creator. This project was my very second project ever. This project gave momentum for me to dive deeper into web development. I learned so much with this project as a beginner. This project is a real-world application and still being used by many people I work with.',
+      category: '<i class="fa fa-lightbulb-o in-uti"></i>',
+      github: 'https://github.com/kevinmnm/compact_note_generator',
+      link: 'projects/CNG/CNG.html',
+      vid: 'projects/CNG/CNG.mp4',
+      new: false,
+      developing: true
+   },
+   {
       title: 'Note Archive (ADAK-V3)',
       desc: 'This is a full-stack application built with Vue.js. Backend is connected via REST API with emplemented authentication using JWT (JSON Web Token).',
       category: '<i class="fa fa-window-maximize in-win"></i>',
       github: 'https://github.com/kevinmnm/akad-v3',
       link: 'https://adak.herokuapp.com/',
-      vid: '',
+      vid: 'projects/ADAK/adak_v3_vid.mp4',
       new: true,
       developing: false
    },
@@ -55,16 +65,6 @@ let allProjects = [
       github: 'https://github.com/kevinmnm/portfolio_website_version_1',
       link: 'projects/websiteV1/index.html',
       vid: 'projects/websiteV1/websiteV1.mp4',
-      new: false,
-      developing: false
-   },
-   {
-      title: 'Compact Note Generator',
-      desc: 'CVS Specialty Pharmacy note creator. This project was my very second project ever. This project gave momentum for me to dive deeper into web development. I learned so much with this project as a beginner. This project is a real-world application and still being used by many people I work with.',
-      category: '<i class="fa fa-lightbulb-o in-uti"></i>',
-      github: 'https://github.com/kevinmnm/compact_note_generator',
-      link: 'projects/CNG/CNG.html',
-      vid: 'projects/CNG/CNG.mp4',
       new: false,
       developing: false
    },
@@ -278,7 +278,7 @@ const myself = new Vue({
       show_arrowL: false,
       show_arrowR: false,
       cList: ['Responsive UI/UX Designer', 'SEO & E-Commerce Marketing', 'Social Media Marketer', 'Bilingual: English & Korean', 'English/Korean Freelance Interpreter', 'TESOL Certified Teacher', 'CVS Specialty Pharmacy Agent'],
-      sList: ['HTML', '(S)CSS', 'JavaScript (Vanilla)', 'Vue.js', 'Vuetify', 'React.js', 'Redux', 'Firebase', 'jQuery', 'GIT', 'Node.js', 'MongoDB', 'NPM', 'Webpack', 'MySQL']
+      sList: ['HTML', '(S)CSS', 'JavaScript (Vanilla)', 'Vue.js', 'Nuxt.js', 'Vuetify', 'React.js', 'Next.js', 'Redux', 'Socket.io', 'Firebase', 'jQuery', 'GIT', 'Node.js', 'MongoDB', 'NPM', 'Webpack', 'MySQL']
    },
    methods: {
       clic1: function () {
