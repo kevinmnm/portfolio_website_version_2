@@ -9,14 +9,34 @@ let pp = document.querySelector('.pp');
 let navItem = document.querySelectorAll('.nav-menu');
 let allProjects = [
    {
-      title: 'Compact Note Generator',
+      title: 'Compact Note Generator V2',
+      desc: 'This is a full-stack application built with Vue.js. CVS Specialty Pharmacy note creator version 2. Created to convert static version (v1) to CRUD version with reliable database. Improved every aspects including design, functionality, code optimization, and logics.',
+      category: '<i class="fa fa-lightbulb-o in-uti"></i>',
+      github: 'https://github.com/kevinmnm/cng-v2',
+      link: 'https://bvcng.herokuapp.com/',
+      vid: 'projects/CNGv2/cng-v2-video.mp4',
+      new: true,
+      developing: false
+   },
+   {
+      title: 'Card Match Game',
+      desc: 'Fun card matching game! Play against AI and stack up your win rate. Stats are saved locally.',
+      category: '<i class="fa fa-gamepad in-gam"></i>',
+      github: 'https://github.com/kevinmnm/card_game',
+      link: 'projects/cardGame/cardMatch.html',
+      vid: 'projects/cardGame/cardMatch.mp4',
+      new: false,
+      developing: true
+   },
+   {
+      title: 'Compact Note Generator V1',
       desc: 'CVS Specialty Pharmacy note creator. This project was my very second project ever. This project gave momentum for me to dive deeper into web development. I learned so much with this project as a beginner. This project is a real-world application and still being used by many people I work with.',
       category: '<i class="fa fa-lightbulb-o in-uti"></i>',
       github: 'https://github.com/kevinmnm/compact_note_generator',
       link: 'projects/CNG/CNG.html',
       vid: 'projects/CNG/CNG.mp4',
       new: false,
-      developing: true
+      developing: false 
    },
    {
       title: 'Note Archive (ADAK-V3)',
@@ -25,7 +45,7 @@ let allProjects = [
       github: 'https://github.com/kevinmnm/akad-v3',
       link: 'https://adak.herokuapp.com/',
       vid: 'projects/ADAK/adak_v3_vid.mp4',
-      new: true,
+      new: false,
       developing: false
    },
    {
@@ -65,16 +85,6 @@ let allProjects = [
       github: 'https://github.com/kevinmnm/portfolio_website_version_1',
       link: 'projects/websiteV1/index.html',
       vid: 'projects/websiteV1/websiteV1.mp4',
-      new: false,
-      developing: false
-   },
-   {
-      title: 'Card Match Game',
-      desc: 'Fun card matching game! Play against AI and stack up your win rate. Stats are saved locally.',
-      category: '<i class="fa fa-gamepad in-gam"></i>',
-      github: 'https://github.com/kevinmnm/card_game',
-      link: 'projects/cardGame/cardMatch.html',
-      vid: 'projects/cardGame/cardMatch.mp4',
       new: false,
       developing: false
    },
