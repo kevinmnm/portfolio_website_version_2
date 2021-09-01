@@ -8,7 +8,7 @@
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
    <link rel="stylesheet" href="src/ribbon.css">
    <link rel="stylesheet" href="src/ribbon_dev.css">
@@ -16,7 +16,7 @@
    <link rel="stylesheet" href="new.css">
 
    <!-- Global site tag (gtag.js) - Google Analytics -->
-   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-148978337-2"></script>
+   <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-148978337-2"></script> -->
    <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() { dataLayer.push(arguments); }
@@ -83,7 +83,7 @@
    <br>
    <div id='expla' class='destroy'>
       <div id='desc' class='animate__animated'>
-         I'm a Front-End Web Developer located in Maryland. I'm open for relocation, full/part-time, and most
+         I'm a <b>Full-Stack Web Developer</b> located in Maryland. I'm open for relocation, full/part-time, and most
          preferably, <b>remote</b> work opportunities.
       </div>
       <div id='resume' class='animate__animated'>Resume</div>
@@ -93,7 +93,7 @@
    <div id='myself'>
       <div class='pp pop2' @contextmenu="disable_right_click($event)">
 
-         <transition-group name="carousel">
+         <transition-group mode="out-in" name="carousel">
             <img class='profile animate__animated' src='img/pp.png' alt='Profile Picture1' v-show='whichPic === 1'
                draggable='false' :key="11" />
             <img class='profile animate__animated' src='img/pp2.png' alt='Profile Picture2' v-show='whichPic === 2'

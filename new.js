@@ -2,10 +2,6 @@ import folder_icon from "./src/icon.js"
 import github_icon from "./src/github-icon.js"
 
 //Global declarations
-let interV;
-let interVV;
-let covers = document.querySelectorAll('.cover');
-let pp = document.querySelector('.pp');
 let navItem = document.querySelectorAll('.nav-menu');
 let allProjects = [
    {
@@ -287,8 +283,8 @@ const myself = new Vue({
       hider_right_ani: true,
       show_arrowL: false,
       show_arrowR: false,
-      cList: ['Responsive UI/UX Designer', 'SEO & E-Commerce Marketing', 'Social Media Marketer', 'Bilingual: English & Korean', 'English/Korean Freelance Interpreter', 'TESOL Certified Teacher', 'CVS Specialty Pharmacy Agent'],
-      sList: ['HTML', '(S)CSS', 'JavaScript (Vanilla)', 'Vue.js', 'Nuxt.js', 'Vuetify', 'React.js', 'Next.js', 'Redux', 'Socket.io', 'Firebase', 'jQuery', 'GIT', 'Node.js', 'MongoDB', 'NPM', 'Webpack', 'MySQL']
+      cList: ['CompTIA Security+ Certified', 'Obtained Interim Security Clearance', 'Responsive UI/UX Designer', 'SEO & E-Commerce Marketing', 'Social Media Marketer', 'Bilingual: English & Korean', 'English/Korean Freelance Interpreter', 'TESOL Certified Teacher', 'CVS Specialty Pharmacy Agent'],
+      sList: ['HTML', '(S)CSS', 'JavaScript (Vanilla)', 'Vue.js', 'Nuxt.js', 'Vuetify', 'React.js', 'Next.js', 'Redux', 'Socket.io', 'Firebase', 'jQuery', 'GIT', 'Node.js', 'MongoDB', 'NPM', 'Webpack', 'MySQL', 'Java']
    },
    methods: {
       clic1: function () {
@@ -336,10 +332,12 @@ const myself = new Vue({
       profile_prev(){
          this.arrow_temp_hide();
          (this.whichPic === 1) ? this.whichPic = 3 : this.whichPic--;
+         // (this.whichPic === 1) ? this.whichPic = 2 : this.whichPic = 1;
       },
       profile_next(){
          this.arrow_temp_hide();
          (this.whichPic === 3) ? this.whichPic = 1 : this.whichPic++;
+         // (this.whichPic === 1) ? this.whichPic = 2 : this.whichPic = 1;
       },
       disable_right_click(e){
          e.preventDefault();
@@ -450,6 +448,7 @@ const aboutMe = new Vue({
       txt: 'let',
       txt2: ' kevin',
       txt3: "'Actively looking for Web Developer job.'",
+      combinedText: "'let kevin = Passionate Full-Stack Web Developer';",
       ended: false
    },
    methods: {
