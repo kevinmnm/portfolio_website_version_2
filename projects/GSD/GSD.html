@@ -1,0 +1,595 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>GSD</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@400;700&family=Indie+Flower&family=Nunito+Sans:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #181818;
+            font-family: "SF Pro Text","Myriad Set Pro","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+        }
+
+        #gsd {
+            margin-top: 3%;
+        }
+
+        .gsdIndex {
+            z-index: 5;
+            position: relative;
+        }
+
+        input, textarea, option, select {
+            background-color: #3d3d3d;
+            color: white;
+            border: none;
+        }
+
+        #ultimate-grid {
+            display: grid;
+            grid-template-columns: auto auto;
+        }
+
+        #template-grid {
+            border: 1px yellow solid;
+        }
+
+        #history-grid {
+            border: 1px red solid;
+        }
+
+        th,
+        td {
+            border: 2px rgba(207, 207, 207, 0.699) solid;
+            border-collapse: collapse;
+            padding: 0px;
+            color: rgb(221, 221, 221);
+        }
+
+        th {
+            background-color: rgb(11, 48, 70);
+        }
+
+        table {
+            border-collapse: collapse;
+            font-size: 30px;
+            padding: 0px;
+        }
+
+        .jusText {
+            width: 100%;
+            height: 100%;
+            font-size: 30px;
+            margin: 0px;
+        }
+
+        .cusText {
+            width: 100%;
+            height: 150px;
+            margin: 0px;
+            border: 0;
+            resize: none;
+            vertical-align: top;
+            font-size: 25px;
+            font-family: "SF Pro Text","Myriad Set Pro","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+            overflow: auto;
+        }
+
+        .boxsizingBorder {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        #gn {
+            width: 100%;
+            margin: 0px;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            vertical-align: top;
+            height: 50px;
+            background-color: rgb(57, 100, 57);
+            font-size: 30px;
+            font-weight: bold;
+            color: whitesmoke;
+            border: none;
+            font-family: "SF Pro Text","Myriad Set Pro","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+        }
+
+        #gn:hover {
+            cursor: pointer;
+            background-color: rgb(15, 75, 15);
+            color: whitesmoke;
+        }
+
+        #sel {
+            width: 100%;
+            height: 50px;
+            font-size: 25px;
+            text-align: center;
+        }
+
+        #sel:hover {
+            cursor: pointer;
+        }
+
+        .thirty {
+            width: 35%;
+        }
+
+        #re {
+            text-align: center;
+            font-size: 30px;
+            padding: 10px;
+            background-color: rgb(38, 126, 126);
+            border-radius: 15px;
+            border-color: black;
+            color: whitesmoke;
+            font-family: "SF Pro Text","Myriad Set Pro","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+        }
+
+        #re:hover {
+            cursor: pointer;
+            background-color: rgb(180, 180, 180);
+            color: black;
+            border-color: black;
+        }
+
+        #notebook {
+            position: absolute;   
+            z-index: 1;
+            margin-right: 5px;
+        }
+
+        #takeNotes {
+            height: 100%;
+            width: 100%;
+            vertical-align: top;
+            font-size: 16px;
+            resize: none;
+            font-family: "Comic Sans MS", cursive, sans-serif;
+            overflow: auto;
+        }
+
+        #notebook table {
+            width: 300px;
+            height: 650px;
+        }
+
+        #notebook tr th {
+            height: 7%;
+            font-family: "Comic Sans MS", cursive, sans-serif;
+        }
+
+        #notebookTh {
+            background-color: rgb(44, 14, 14);
+            color: rgb(182, 181, 181);
+        }
+
+        #nIcon {
+            border: 1px solid rgb(44, 14, 14);
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            top: 0px;
+            left: 0px;
+            background-color: rgb(224, 104, 104);
+            text-align: center;
+            font-weight: bold;
+            font-size: 20px;
+            font-family: "Comic Sans MS", cursive, sans-serif;
+        }
+
+        #nIcon:hover {
+            cursor: pointer;
+        }
+
+        #nIcon2 {
+            border: 1px solid rgb(42, 44, 14);
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            top: 0px;
+            right: 0px;
+            background-color: rgb(224, 222, 104);
+            text-align: center;
+            font-weight: bold;
+            font-size: 20px;
+            font-family: "Comic Sans MS", cursive, sans-serif;
+        }
+
+        #nIcon2:hover {
+            cursor: pointer;
+        }
+
+        #note {
+            position: absolute;
+            z-index: 1;
+            right: 0px;
+            margin-right: 5px;
+        }
+
+        #prebuilt {
+            height: 100%;
+            width: 100%;
+            vertical-align: top;
+            font-size: 16px;
+            resize: none;
+            font-family: "Comic Sans MS", cursive, sans-serif;
+            overflow: auto;
+        }
+
+        #note table {
+            width: 300px;
+            height: 650px;
+        }
+
+        #note tr th {
+            height: 7%;
+            font-family: "Comic Sans MS", cursive, sans-serif;
+        }
+
+        #noteTh {
+            background-color: rgb(44, 41, 14);
+            color: rgb(182, 181, 181);
+        }
+
+        .sch{display:none;}
+        #flexer{
+            display: flex;
+            flex-direction: row;
+            -ms-flex-direction: row;;
+        }
+        .flexItem{
+            margin: 0;
+            border: 2px rgba(207, 207, 207, 0.699) solid;
+            border-top: none;
+            border-bottom: none;
+            border-left: none;
+            background-color: #3d3d3d;
+            cursor: pointer;
+            padding-left: 2px;
+            padding-right: 2px;
+        }
+        .flexItem:hover{
+            background-color: black;
+        }
+        #flexer :last-child{
+            border-right: none;
+        }
+
+        .weekSelec{
+            background-color: black;
+            color: white;
+        }
+
+        #avayaFlex{
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            box-sizing: border-box;
+            width: 100%;
+            justify-content: center;
+        }
+        #avayaFlex input{
+            width: 100px;
+            font-size: 25px;
+        }
+        .extension{
+            flex-grow: 1;
+            border: 2px rgba(207, 207, 207, 0.699) solid;
+            border-right: none;
+            border-top: none;
+            border-bottom: none;
+            text-align: center;
+            opacity: 0.4;
+        }
+        #avayaB{
+            border-left: none;
+            cursor: pointer;
+            user-select: none;
+            background-color: rgb(57, 100, 57);
+            width: 100px;
+            opacity: 0.4;
+        }
+        #avayaB:active{
+            box-shadow: 0 0 5px inset;
+        }
+
+    </style>
+
+</head>
+
+<body onload='getLocalStorage()'>
+
+    <div id='nIcon' onclick='showNote()'>N</div>
+    <div id='nIcon2' onclick='showNote2()'>P</div>
+
+    <div id='notebook'>
+        <table>
+            <tr>
+                <th id='notebookTh'>Notebook</th>
+            </tr>
+            <tr>
+                <td>
+                    <textarea id='takeNotes' class='boxsizingBorder'></textarea>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div id='note'>
+        <table>
+            <tr>
+                <th id='noteTh'>Note</th>
+            </tr>
+            <tr>
+                <td>
+                    <textarea id='prebuilt' class='boxsizingBorder'></textarea>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <center>
+        <table id='gsd' onfocus='gsdOn()' onfocusout='gsdOff()'>
+            <tr>
+                <th colspan='2' id='gsdHeader'>GSD Template</th>
+            </tr>
+            <tr>
+                <th class='thirty'>WIN:</th>
+                <td>
+                    <input id='winN' class='jusText boxsizingBorder' type='text' onfocus='gsdOn()' onfocusout='gsdOff()'></input>
+                </td>
+            </tr>
+            <tr>
+                <th>Phone:</th>
+                <td>
+                    <input id='phoneN' class='jusText boxsizingBorder' type='text' onfocus='gsdOn()' onfocusout='gsdOff()'></input>
+                </td>
+            </tr>
+            <tr>
+                <th>Site:</th>
+                <td>
+                    <input id='siteN' class='jusText boxsizingBorder' type='text' onfocus='gsdOn()' onfocusout='gsdOff()'></input>
+                </td>
+            </tr>
+            <tr>
+                <th colspan='2'>Issue/Action</th>
+            </tr>
+            <tr>
+                <td colspan='2'>
+                    <textarea id='issueN' class='cusText boxsizingBorder' onfocus='gsdOn()' onfocusout='gsdOff()'></textarea>
+                </td>
+            </tr>
+            <tr id='avayaHidden'>
+                <td colspan='2'>
+                    <div id='avayaFlex'>
+                        <div id='avayaB' class='extension'>Avaya Issue?</div>
+                        <input class='extension' placeholder='Extension #1' disabled></input>
+                        <input class='extension' placeholder='Extension #2' disabled></input>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th id='esc'>Escalate</th>
+                <td>
+                    <select id='sel' onchange='schedule()' onfocus='gsdOn()' onfocusout='gsdOff()'>
+                        <option value='No'>No</option>
+                        <option value='Yes'>Yes</option>
+                    </select>
+                </td>
+            </tr>
+            <tr class='sch'>
+                <th colspan='2'>Shift Schedule:</th>
+            </tr>
+            <tr class='sch'>
+                <th>From:</th>
+                <td>
+                    <input id='tFrom' type='time' class='jusText boxsizingBorder'></input>
+                </td>
+            </tr>
+            <tr class='sch'>
+                <th>To:</th>
+                <td>
+                    <input id='tTo' type='time' class='jusText boxsizingBorder'></input>
+                </td>
+            </tr>
+            <tr class='sch'>
+                <th>Off Days:</th>
+                <td>
+                    <div id='flexer'>
+                        <div class='flexItem'>Mon</div>
+                        <div class='flexItem'>Tue</div>
+                        <div class='flexItem'>Wed</div>
+                        <div class='flexItem'>Thu</div>
+                        <div class='flexItem'>Fri</div>
+                        <div class='flexItem'>Sat</div>
+                        <div class='flexItem'>Sun</div>
+                    </div>
+                </td>
+            </tr>
+            <!----------Deleting--------
+        <tr>
+            <th colspan='2'>Action Taken</th>
+        </tr>
+        <tr>
+            <td colspan='2'>
+                <textarea id='actionN' class='cusText boxsizingBorder'></textarea>
+            </td>
+        </tr>
+-------------->
+            <tr>
+                <th colspan='2'>
+                    <button id='gn' onclick='genCopy()' onfocus='gsdOn()' onfocusout='gsdOff()'>Generate/Copy</button>
+                </th>
+            </tr>
+            <tr>
+                <th colspan='2'>Final Note</th>
+            </tr>
+            <tr>
+                <td colspan='2'>
+                    <textarea id='finalN' class='cusText boxsizingBorder' onfocus='gsdOn()' onfocusout='gsdOff()'></textarea>
+                </td>
+            </tr>
+        </table>
+        <br />
+        <button id='re' onclick='localRefresh()'>Refresh</button>
+
+    </center>
+
+
+
+    <script>
+
+        //Global Variables
+        var gsd = document.getElementById('gsd');
+        var phone = document.getElementById('phoneN');
+        var win = document.getElementById('winN');
+        var site = document.getElementById('siteN');
+        var issue = document.getElementById('issueN');
+        var escalate = document.getElementById('sel');
+        //var action = document.getElementById('actionN');
+        var final = document.getElementById('finalN');
+        var refresh = document.getElementById('re');
+        var notebook = document.getElementById('notebook');
+        var note = document.getElementById('note');
+        var sch = document.querySelectorAll('.sch');
+        var flexer = document.querySelector('#flexer');
+        var flexItem = document.querySelectorAll('.flexItem');
+        var tFrom = document.querySelector('#tFrom');
+        var tTo = document.querySelector('#tTo');
+        var avayaB = document.querySelector('#avayaB');
+        var extensions = document.querySelectorAll('.extension');
+        var extendsionVal1;
+        var extensionVal2;
+        var weekSelec;
+        var weekSelecTxt = [];
+
+        function genCopy() {
+            if (escalate.value === 'No') {
+                final.value = 'Request: Ticket' + '\n' + 'Case Status: ' + 'RESOLVED' + '\n' + 'WIN: ' + win.value + '\n' + 'Phone: ' + phone.value + '\n' + 'Site: ' + site.value + '\n\n' + 'Issue/Action: ' + issue.value + '\n\n' + 'Thank you.';
+                final.select();
+                document.execCommand('copy');
+            } else if (escalate.value == 'Yes') {
+                final.value = 'Request: Callback' + '\n' + 'Case Status: ESCALATE' + '\n' + 'WIN: ' + win.value + '\n' + 'Phone: ' + phone.value + '\n' + 'Site: ' + site.value + '\n\n' + 'Issue: ' + issue.value + '\n\n' + avayaTxt() + "Agent's Shift: " + tFrom.value + ' - ' + tTo.value + '\n' + 'Off Days: ' + weekSelecTxt.join(', ') + '\n\n' + 'Thank you.';
+                final.select();
+                document.execCommand('copy');
+            }
+        }
+
+        function avayaTxt(){
+            if (extensions[0].style.opacity === '1'){
+                extensionVal1 = extensions[1].value;
+                extensionVal2 = extensions[2].value;
+                return 'Avaya Extensions: ' + '\n' + extensionVal1 + '\n' + extensionVal2 + '\n\n';
+            } else {
+                return '';
+            }
+        }
+
+        avayaB.addEventListener('click',function(){
+            if (avayaB.style.opacity !== '1'){
+                for (let i=0; i<extensions.length; i++){
+                    extensions[i].style.opacity = '1';
+                    //avayaB.style.boxShadow = '0 0 5px black inset';
+                }
+                extensions[1].disabled = false;
+                extensions[2].disabled = false;
+            } else {
+                for (let i=0; i<extensions.length; i++){
+                    extensions[i].style.opacity = '0.4';
+                }
+                extensions[1].disabled = true;
+                extensions[2].disabled = true;
+            }
+        });
+
+        $('.flexItem').on('click', function(event){
+            let et = $(event.target);
+            et.toggleClass('weekSelec');
+            weekSelec = document.querySelectorAll('.weekSelec');
+            weekSelecTxt = [];
+            for (let i=0; i<weekSelec.length; i++){
+                weekSelecTxt.push(weekSelec[i].innerHTML);
+            }
+        });
+
+        function schedule() {
+            if (escalate.value === 'Yes') {
+                for (let i=0; i<sch.length; i++){
+                    sch[i].style.display = 'table-row';
+                }
+            } else {
+                for (let i=0; i<sch.length; i++){
+                    sch[i].style.display = 'none';
+                }
+            }
+        }
+
+        function localRefresh(){
+            localStorage.GSDLeft = document.querySelector('#takeNotes').value;
+            location.reload();
+        }
+
+        function getLocalStorage(){
+            if (!localStorage.GSDLeft){
+                document.querySelector('#takeNotes').value = '';
+            }
+            document.querySelector('#takeNotes').value =localStorage.GSDLeft;
+        }
+
+        // function refreshTemp() {
+        //     phone.value = '';
+        //     win.value = '';
+        //     site.value = '';
+        //     issue.value = '';
+        //     escalate.value = 'No';
+        //     final.value = '';
+        // }
+
+        function showNote() {
+            if (notebook.style.display !== 'none') {
+                notebook.style.display = 'none';
+            } else {
+                notebook.style.display = 'block';
+            }
+        }
+
+        function showNote2() {
+            if (note.style.display !== 'none') {
+                note.style.display = 'none';
+            } else {
+                note.style.display = 'block';
+            }
+        }
+
+        function gsdOn(){
+            gsd.classList.add('gsdIndex');
+        }
+
+        function gsdOff() {
+            gsd.classList.remove('gsdIndex');
+        }
+
+        function fillNote() {
+            const preB = document.getElementById('prebuilt');
+            const sp = '\n';
+            const athome = '.\\athome';
+
+            
+        }   
+
+        fillNote();
+        
+    </script>
+
+</body>
+
+</html>

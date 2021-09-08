@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sticky Note For Dilara</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@400;700&family=Indie+Flower&family=Nunito+Sans:wght@400;600;700;800;900&display=swap" rel="stylesheet"></link>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
+
+<link rel='stylesheet' href='stickyNotes.css' type='text/css'>
+</head>
+<body>
+
+<div id="content" :class='{content:darkMM}'>
+	<div class='coverr'>
+    	<div id='config'>
+        	<b><u><div>{{ tT }}</div></u></b>
+        	<div class='tb' style='background-color:#ffe4b3; padding:1%;'>
+                <div class='flexDivs'>
+                    <div>{{ tt }}</div>
+                    <input type='text' 
+                    v-model='titlez' 
+                    maxlength='10' 
+                    placeholder='*Not Required*'>
+                    </input>
+                </div>
+                <!--<code class='des'>{{ des1 }}</code><br>
+                <code class='des'>{{ des2 }}</code>-->
+                <div class='flexDivs'>
+                    <div>{{ tc }}</div>
+                    <input type='color' v-model='titleBackColor' />
+                </div>
+                <div class='flexDivs'>
+                    <div>{{ baf }}</div>
+                    <input type='color' v-model='titleFontColor'/>
+                </div>
+          		<div class='flexDivs'>
+                	<div>Pin: </div> 
+                	<select @change='pinSelect($event)'>
+                    	<option>Yes</option>
+                        <option>No</option>
+                    </select>
+                </div>
+            </div>
+            
+            <br>
+            
+            <b><u><div>{{ ba }}</div></u></b>
+            <div style='background-color:#ffffb3; padding:1%;'>
+                <div class='flexDivs'>
+                    <div>{{ bCo }}</div>
+                    <input type='color' v-model='baseBackColor'/>
+                </div>
+                <div class='flexDivs'>
+                    <div>{{ baf }}</div>
+                    <input type='color' v-model='baseFontColor'/>
+                </div>
+            </div>
+            <br>
+            <div class='butto' @click='preCreate()'>Preview</div>
+            <div class='preview'>
+                <div class='preNote'>
+                	<div class='pin' v-show='pinner'></div>
+                	<div class='topS'>
+                    	<div class='titleTxt'></div>
+                    	<div class='xx'>x</div>
+                    </div>
+                    <textarea class='edito'></textarea>
+                </div>
+            </div>
+            <br><div class='butto' @click='creator()'>{{ cr }}</div>
+            <br><div class='butto' @click='closer()'>{{ cl }}</div>
+        </div>
+    </div>
+	<div id='titl' @mouseenter='opaci()' @mouseleave='opaciEnd()' :class='{darkBackground:darkMM}'>
+    	<div class='darkMode' :class='{opaOne: opaYes}' @click='darkM($event)'>&#9733;</div>
+    	<mark @click='pop()'>{{ cont }}</mark>
+    </div>
+    <img id='pic' :class='{darkBackground: darkMM, darkBoxShadow: darkMM}' alt='Create folder name "sImage" on same location of this app. save image size 200 x 200 (.jpg) in "sImage" folder.' title='Create folder name "sImage" on same location of this app. save image size 200 x 200 (.jpg) in "sImage" folder.' src='/sImage/myImg.jpg'></img>
+    <div id='main'>
+    	<!-------------------NOTE-------------------------------->
+    	<div 
+        class='note animate__animated animate__jackInTheBox'
+        v-for='(all,ind) in notz'
+        v-bind:key='all.keyer'
+        :style='{ zIndex: all.zIn }' 
+        @mouseenter='pinShower($event, all)' 
+        @mouseleave='pinShowerEnd($event, all)'
+        >
+        	<div class='pin' v-show='all.pIn'></div>
+        	<div class='topS' 
+            @mousedown='nestedFunc($event)' 
+            :style='{ backgroundColor: all.tBC, color: all.tFC }'>
+			{{ all.title }}
+            	<div class='xx' @click='del($event, ind)'>x</div>
+            </div>
+            <textarea class='edito' 
+            spellcheck='false' 
+            :style='{ backgroundColor: all.bBC, color: all.bFC }'></textarea>
+        </div>
+    </div>
+</div>
+
+<script type='text/javascript' src='stickyNotes.js'></script>
+
+</body>
+</html>

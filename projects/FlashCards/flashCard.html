@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<style>
+
+body{
+	position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    box-sizing: border-box;
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+}
+
+input{
+	font-size: 20px;
+    outline-color: green;
+    box-sizing: border-box;
+    width: 250px;
+}
+
+button{
+	border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: white;
+    background-color: lightgreen;
+    padding: 10px;
+    border-radius: 10px;
+    outline: none;
+    user-select: none;
+}
+
+button:active{
+	box-shadow: 0 0 5px green inset;
+}
+
+textarea{
+	display: block;
+	font-size: 20px;
+    outline-color: green;
+    resize: none;
+    margin: auto;
+    box-sizing: border-box;
+    width: 250px;
+}
+
+.card{
+	position: relative;
+	box-sizing: border-box;
+    width: 250px;
+    height: 300px;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    padding: 30px;
+    word-wrap: break-word;
+    border-radius: 10px;
+    display: inline-block;
+    margin: 10px;
+    color: white;
+    vertical-align: text-top;
+    cursor: pointer;
+}
+
+.delete{
+	position: absolute;
+    right: 10px;
+	top: 0;
+    user-select: none;
+    color: lightGrey;
+}
+
+.delete:hover{
+	color: white;
+}
+
+.highlight{
+	border: 2px solid red;
+}
+
+/* Vue Transition */
+.flip-enter-active {
+    transition: all 0.4 ease;
+}
+
+.flip-enter {
+    transform: rotateY(180deg);
+    opacity: 0;
+}
+
+
+</style>
+</head>
+<body draggable='false'>
+	
+</div>
+
+<h1>Flashcard App</h1>
+<div id='inputWrap'>
+	<input 
+    type='text'
+    placeholder='Title'
+    v-model='frontVal'
+    v-bind:class='{highlight:stat}'
+    >
+    </input>
+    
+<br><br>
+
+    <textarea 
+    placeholder='Content' 
+    v-model='backVal'
+    v-bind:class='{highlight:stat}'
+    ></textarea>
+    
+<br>
+    <button v-on:click='newCard' v-text='bText'></button>
+</div>
+
+<br>
+
+<div id='cardWrapV'>
+    <transition-group name='flip'>
+  <div
+  class='card animate__animated animate__faster'
+  v-on:click.self='cardFlip(sdf, $event)' 
+  v-for='(sdf, ind) in loopList'
+  v-bind:style='{backgroundColor:sdf.backCol}'
+  key='sdf'>
+    
+      <div class='delete' v-on:click='deleteC(ind)'>x</div>
+      <p v-text='sdf.cardFront' v-show='!sdf.showBack'></p>
+      <p v-text='sdf.cardBack' v-show='sdf.showBack'></p>
+    
+  </div>
+</transition-group>
+</div>
+
+<script>
+'use strict';
+
+const colorList = ['violet','lightGreen','dodgerBlue','orange']
+
+const cardList = [
+	{
+    	cardFront: "Example Card",
+        cardBack: "What will be the content?",
+        backCol: "violet",
+    	showBack: false
+    },
+    {
+    	cardFront: "Example Card 2",
+        cardBack: "What will be the content 2?",
+        backCol: "dodgerBlue",
+        showBack: false
+    }
+];
+
+const inputWrapV = new Vue({
+	el: '#inputWrap',
+    data: {
+    	bText: 'Add a New Card',
+    	frontVal: '',
+        backVal: '',
+        stat: false
+    },
+    methods: {
+    	newCard: function(){
+        	if (this.frontVal !== '' && this.backVal !== ''){
+            	this.stat = false;
+                let rN = Math.floor(Math.random()*(colorList.length));
+                let rC = colorList[rN];
+                cardList.push({
+                    cardFront: this.frontVal,
+                    cardBack: this.backVal,
+                    backCol: rC,
+                    showBack: false
+                });
+                this.frontVal = '';
+                this.backVal = '';
+            } else {
+            	this.stat = true;
+            }
+        }
+    }
+});
+
+const cardWrapV = new Vue({
+	el: '#cardWrapV',
+    data: {
+    	loopList: cardList,
+        confirmed: false
+    },
+    methods: {
+    	cardFlip(x, e){
+            e.stopPropagation();
+            x.showBack = !x.showBack;
+            e.target.classList.add('animate__flip');
+            e.target.addEventListener('animationend', () => {
+                e.target.classList.remove('animate__flip');
+            });
+        },
+        deleteC: function(y){
+          cardList.splice(y, 1);   
+        }
+    }
+});
+
+</script>
+</body>
+</html>

@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Account Book</title>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@400;700&family=Indie+Flower&family=Nunito+Sans:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+	position: absolute;
+	margin: 0;
+    box-sizing: border-box;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Nunito', sans-serif;
+}
+
+#inputT{
+	position: relative;
+    margin: auto;
+    font-size: 20px;
+    border-collapse: collapse;
+    box-shadow: 0 0 10px black;
+    background-color: royalBlue;
+    color: white;
+    padding: 15px;
+    margin-top: 20px;
+}
+#inputT tr,
+#inputT td,
+#inputT th{
+    border-collapase: collapse;
+}
+
+#inputT input{
+	height: 100%;
+    font-size: 20px;
+    border: none;
+}
+
+#inputT select{
+	height: 100%;
+    width: 100%;
+    font-size: 20px;
+}
+
+.noF{font-size:none;}
+
+.res td,
+.res th,
+.resMain td,
+.resMain th{
+	border: 2px solid black;
+	border-collapse: collapse;
+    margin: 0;
+    text-align: center;
+    padding: 10px;
+}
+
+#outpuT{
+	border-collapse: collapse;
+    margin: auto;
+}
+
+#submitB{
+	width: 100px;
+	position: relative;
+	margin: auto;
+    text-align: center;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 25px;
+    margin-top: 10px;
+    box-shadow: 0 0 5px black;
+    border-radius: 10px;
+    padding: 5px;
+    background-color: dodgerBlue;
+    color: white;
+    user-select: none;
+}
+#submitB:active{
+	box-shadow: 0 0 5px black inset;
+}
+
+#infoIco{
+	position: fixed;
+    top: 2px;
+    right: 10px;
+    z-index: 1;
+    font-size: 25px;
+    text-align: center;
+	user-select: none;
+    font-weight: bold;
+    color: lightBlue;
+    cursor: pointer;
+    padding: 0;
+}
+#infoIco:hover{
+	color: royalBlue;
+}
+
+#info{
+	position: fixed;
+    top: 30px;
+    right: 0px;
+    z-index: 1;
+    padding: 10px;
+    display: none;
+}
+
+#info th,
+#info table{
+	border: 1px solid black;
+    border-collapse: collapse;
+    text-align: center;
+}
+#info table{
+	background-color: white;
+    box-shadow: 0 0 5px black;
+}
+
+#edit{
+	position: fixed;
+    text-align: center;
+    z-index: 2;
+    font-weight: bold;
+    font-size: 20px;
+    background-color: royalBlue;
+    padding: 15px;
+    color: white;
+    border-radius: 10px;
+    user-select: none;
+    box-shadow: 0 0 5px black;
+    display: none;
+}
+
+#editS,
+#editC{
+	margin-top: 15px;
+    margin-bottom: 10px;
+	font-weight: normal;
+    font-size: 15px;
+    color: black;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 3px black;
+    padding: 2px;
+}
+#editS{background-color:lightGreen;}
+#editC{background-color:#ff7b63;}
+
+#editS:active,
+#editC:active{
+	box-shadow: 0 0 5px black inset;
+}
+
+#wrap{
+	position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.7;
+    display: none;
+}
+
+#msg{
+	position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+ 	text-align: center;
+    z-index: 3;
+	display: none;
+    font-weight: bold;
+    background-color: lightGreen;
+}
+
+#localSave{
+	position: relative;
+    margin: auto;
+    width: 250px;
+    height: 50px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
+    box-sizing: border-box;
+    padding: 10px;
+    background-color: green;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 5px black;
+    cursor: pointer;
+    user-select: none;
+}
+#localSave:active{box-shadow: 0 0 5px black inset;}
+#localReset{
+	position: relative;
+    margin: auto;
+    margin-top: 20px;
+    width: 100px;
+    height: auto;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    background-color: crimson;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    padding: 5px;
+    box-shadow: 0 0 5px black;
+    user-select: none;
+    margin-bottom: 10px;
+}
+#localReset:active{box-shadow: 0 0 5px black inset;}
+
+#earn{background-color:lightgreen;}
+#spent{background-color:#ff7b63;}
+#none{background-color:lightYellow;}
+</style>
+</head>
+<body onload='datee()'>
+
+<div id='msg'></div>
+
+<div id='infoIco' onclick='showH()'>&#9432;</div>
+<div id='info'>
+	<table id='infoT'>
+        <tr>
+        	<th>Balance</th>
+        </tr>
+        <tr>
+        	<th id='totalV'></th>
+        </tr>
+        <tr>
+        	<th id='totalN'>
+            	<button onclick='newTotal()'>EDIT</button>
+            </th>
+        </tr>
+        <tr>
+        	<th>Saved Status</th>
+        </tr>
+        <tr>
+        	<th id='sStat'></th>
+        </tr>
+    </table>
+</div>
+<div id='wrap'>
+</div>
+
+<div id='edit'>
+    <div>- New Balance -</div>
+    <input id='newB' type='text' placeholder='IDR'></input><br>
+    <div id='editS' onclick='saveNewB()'>Save New Total</div>
+    <div id='editC' onclick='closeNewB()'>Close</div>
+</div>
+
+<table id='inputT'>
+	<tr>
+    	<th>Date</th>
+    </tr>
+    <tr class='noF'>
+    	<td class='noF'>
+    		<input id='dateT' type='text'></input>
+    	</td>
+    </tr>
+    <tr>
+    	<th>Description</th>
+    </tr>
+    <tr>
+    	<td>
+        	<input id='desc' type='text'></input>
+        </td>
+    </tr>
+    <tr>
+    	<th>Earning/Spending</th>
+    </tr>
+    <tr>
+    	<td>
+        	<select id='calcType' onchange='disa()'>
+            	<option>Choose</option>
+                <option id='earn'>Earned</option>
+                <option id='spent'>Spent</option>
+                <option id='none'>None</option>
+            </select>
+        </td>
+    </tr>
+    <tr class='hid'>
+    	<th>How much?</th>
+    </tr>
+    <tr>
+    	<td>
+        	<input id='howM' type='text' placeholder='ex) 100000'></input>
+        </td>
+    </tr>
+</table>
+
+<div id='submitB'>Submit</div>
+
+<br><hr><br>
+
+<table id='outpuT'>
+	<tr class='resMain'>
+    	<td>날짜</td>
+        <td>지출 기록</td>
+        <td>들어오는 돈</td>
+        <td>쓰는 돈</td>
+        <th style='background-color:lightBlue;'>남은 돈</th>
+    </tr>
+</table>
+
+<br><br>
+
+<div id='localSave'>Save Table</div><br>
+<div id='localReset'>Reset All</div>
+
+<script>
+//Global vars
+let calc = document.querySelector('#calcType');
+let submitB = document.querySelector('#submitB');
+let dateT = document.querySelector('#dateT');
+let desc = document.querySelector('#desc');
+let howM = document.querySelector('#howM');
+let outpuT = document.querySelector('#outpuT');
+let resMain = document.querySelector('.res');
+let localS = document.querySelector('#localSave');
+let localR = document.querySelector('#localReset');
+let total = document.querySelector('#totalV');
+let sStat = document.querySelector('#sStat');
+let edit = document.querySelector('#edit');
+let newB = document.querySelector('#newB');
+let msg = document.querySelector('#msg');
+let infoIco = document.querySelector('#infoIco');
+let info = document.querySelector('#info');
+let howMN = 0;
+
+function datee() {
+	//let m = new Date();
+    //let x = `${m.getMonth()}/${m.getDay()}`;
+	//document.querySelector('#dateT').value = x;
+    if (localStorage.savedF){
+    	outpuT.innerHTML = localStorage.savedF;
+    }
+    
+    if (localStorage.savedI){
+    	sStat.innerHTML = localStorage.savedI;
+
+        if (localStorage.savedI == 'Yes'){
+          sStat.style.backgroundColor = 'lightGreen';
+        } else if (localStorage.savedI == 'Reset'){
+          sStat.style.backgroundColor = 'yellow';
+        } else if (localStorage.savedI == 'No') {
+          sStat.style.backgroundColor = '#ff7b63';
+        } 
+    }
+    
+    if (!localStorage.balance){
+    	document.querySelector('#edit').style.display = 'block';
+    	document.querySelector('#wrap').style.display = 'block';
+        document.querySelector('#editC').style.display = 'none';
+        total.innerHTML = '0';
+        edit.style.left = (window.innerWidth - edit.offsetWidth) * 0.5 + 'px';
+		edit.style.top = (window.innerHeight - edit.offsetHeight) * 0.3 + 'px';
+    } else {
+    	total.innerHTML = localStorage.balance;
+        total.innerHTML = formatNumber(Number(total.innerHTML));
+    }
+}
+
+function formatNumber(num) {
+  return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+}
+
+function newTotal(){
+	document.querySelector('#edit').style.display = 'block';
+    document.querySelector('#wrap').style.display = 'block';
+    edit.style.left = (window.innerWidth - edit.offsetWidth) * 0.5 + 'px';
+	edit.style.top = (window.innerHeight - edit.offsetHeight) * 0.3 + 'px';
+}
+
+function disa(){
+	if (calc.value == 'None'){
+    	howM.disabled = true;
+        howM.value = 'None';
+    } else if (calc.value !== 'None') {
+    	howM.disabled = false;
+        howM.value = '';
+    } else {
+    	alert('Unkown error!');
+    }
+}
+
+submitB.addEventListener('click', function(){
+	if (!desc.value == '' && !howM.value == '' && calcType.value !== 'Choose'){
+    	let newRow = outpuT.insertRow();
+        newRow.classList.add('res');
+        let newCell1 = newRow.insertCell();
+        let newCell2 = newRow.insertCell();
+        let newCell3 = newRow.insertCell();
+        let newCell4 = newRow.insertCell();
+        let newCell5 = newRow.insertCell();
+        newCell5.style.fontWeight = 'bold';
+        newCell1.innerHTML = dateT.value;
+        newCell2.innerHTML = desc.value;
+        
+        if (calcType.value === 'None'){
+        	newCell3.innerHTML = '';
+            newCell4.innerHTML = '';
+            newCell5.innerHTML = formatNumber(localStorage.balance);
+        }
+
+        totalCalc();    
+        
+        function totalCalc(){
+          if (calc.value == 'Earned'){
+            newCell3.style.backgroundColor = 'lightGreen';
+            newCell3.innerHTML = howM.value;
+            newCell5.innerHTML = Number(localStorage.balance) + Number(howMN);
+            localStorage.balance = newCell5.innerHTML;
+            total.innerHTML = formatNumber(localStorage.balance);
+            newCell5.innerHTML = formatNumber(newCell5.innerHTML);
+          } else if (calc.value == 'Spent'){
+             newCell4.style.backgroundColor = '#ff7b63';
+             newCell4.innerHTML = howM.value;
+         	 newCell5.innerHTML = Number(localStorage.balance) - Number(howMN);
+        	 localStorage.balance = newCell5.innerHTML;
+     	     total.innerHTML = formatNumber(localStorage.balance);
+             newCell5.innerHTML = formatNumber(newCell5.innerHTML);
+          } else if (calc.value === 'None') {
+            newCell1.style.backgroundColor = 'lightGrey';
+            newCell2.style.backgroundColor = 'lightGrey';
+            newCell3.style.backgroundColor = 'lightGrey';
+            newCell4.style.backgroundColor = 'lightGrey';
+          }
+        }
+        
+        newCell5.style.backgroundColor = 'lightBlue';
+        sStat.innerHTML = 'No';
+    	sStat.style.backgroundColor = 'red';
+        localStorage.savedI = 'No';
+        
+        dateT.value = '';
+        desc.value = '';
+        howM.value = '';
+        howM.disabled = false;
+        calcType.value = 'Choose';
+        
+        msg.innerHTML = 'Added new record! Please save to archive added records.';
+       	$(msg).slideDown().delay(2000).slideUp();
+    } else {
+    	alert('Missing values');
+    }
+});
+
+localS.addEventListener('click',function(){
+	localStorage.savedF = outpuT.innerHTML;
+    sStat.innerHTML = 'Yes';
+    sStat.style.backgroundColor = 'lightGreen';
+    localStorage.savedI = sStat.innerHTML;
+    msg.innerHTML = 'Financial History Saved!';
+    $(msg).slideDown().delay(2000).slideUp();
+    localS.style.pointerEvents = 'none';
+    localS.style.opacity = '0.4';
+    setTimeout(()=>{
+    	localS.style.pointerEvents = 'auto';
+    	localS.style.opacity = '1';
+    },2000);
+});
+
+localR.addEventListener('click',function(){
+	let answer = confirm('Are you sure you want to reset all? \n(Page will refresh upon reset)');
+    if (answer){
+        localStorage.removeItem('savedF');
+        localStorage.removeItem('balance');
+        sStat.innerHTML = 'Reset';
+        sStat.style.backgroundColor = 'yellow';
+        location.reload();
+    }
+});
+
+function saveNewB(){
+    if (!newB.value){
+    	newB.style.borderColor = 'red';
+	} else {
+    	localStorage.balance = newB.value;
+   		total.innerHTML = localStorage.balance;
+        msg.innerHTML = 'Successfully Saved New Balance!';
+       	$(msg).slideDown().delay(1500).slideUp();
+        newB.value = '';
+        newB.style.borderColor = 'initial';
+        total.innerHTML = 'Rp ' + formatNumber(total.innerHTML);
+        document.querySelector('#edit').style.display = 'none';
+    	document.querySelector('#wrap').style.display = 'none';
+        document.querySelector('#editC').style.display = 'block';
+    }
+}
+
+function closeNewB(){
+	document.querySelector('#edit').style.display = 'none';
+    document.querySelector('#wrap').style.display = 'none';
+    newB.style.borderColor = 'initial';
+}
+
+function showH(){
+	$(info).slideToggle();
+}
+
+howM.addEventListener('blur',()=>{
+	howMN = Number(howM.value);
+	howM.value = formatNumber(Number(howM.value));
+});
+
+//Default Positions
+window.onresize = ()=>{
+	edit.style.left = (window.innerWidth - edit.offsetWidth) * 0.5 + 'px';
+	edit.style.top = (window.innerHeight - edit.offsetHeight) * 0.3 + 'px';
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ADAK</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment-with-locales.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+<link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@400;700&family=Indie+Flower&family=Nunito+Sans:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+
+<link rel='stylesheet' href='src/css/ADAK_revamp.css'/>
+<script type='module' defer src='src/js/./ADAK_revamp.js'></script>
+</head>
+<body>
+    
+<div id="app">
+    <h2 id='yr' onclick='location.reload()'>2020</h2>
+
+    <calendar-comp v-show='!show_list_comp'></calendar-comp>
+    <list-comp v-show='show_list_comp' @learn-emit='learned_data($event)'></list-comp>
+
+    <learned-comp 
+    v-show='show_learned_comp' 
+    :parent-value='value_passer'>
+    </learned-comp>
+
+</div>
+
+</body>
+</html>
