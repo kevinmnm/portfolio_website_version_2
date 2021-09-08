@@ -1,2 +1,0 @@
-(this.webpackJsonpgsg=this.webpackJsonpgsg||[]).push([[6],{79:function(e,s,a){},82:function(e,s,a){"use strict";a.r(s);var n=a(0),i=a.n(n);a(79);s.default=function(){return i.a.createElement("div",{id:"Missing"},i.a.createElement("div",{className:"missing-content"},i.a.createElement("img",{className:"missing-img",src:a(35),alet:"404.png",draggable:"false",alt:"Missing page"})))}}}]);
-//# sourceMappingURL=6.087eeab8.chunk.js.map
